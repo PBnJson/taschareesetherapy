@@ -1,26 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap");
+
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Default theme (Quiet Luxury) */
+:root[data-theme="quiet"] {
+  --bg: #f7e6ca; /* quiet-100 */
+  --surface: #e8d59e; /* quiet-300 */
+  --accent: #d9bbb0; /* quiet-500 */
+  --muted: #ad9c8e; /* quiet-700 */
+  --fg: #2b2b2b; /* pick a readable text color */
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* Alt theme (Siltstone) */
+:root[data-theme="silt"] {
+  --bg: #fff5b8; /* silt-300 */
+  --surface: #cbbd93; /* silt-100 */
+  --accent: #ffb16e; /* silt-500 */
+  --muted: #cca25a; /* silt-700 */
+  --fg: #2b2b2b;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+/* Apply globals using the variables */
+@layer base {
+  html,
+  body {
+    @apply font-sans;
+    background: var(--bg);
+    color: var(--fg);
   }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
 }
