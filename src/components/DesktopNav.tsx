@@ -1,35 +1,43 @@
 "use client";
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 
 const links = [
-  { href: "/", label: "Home" },
-  { href: "/services", label: "Services" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
+  { href: "#home", label: "Home" },
+  { href: "#about", label: "About" },
+  { href: "#services", label: "Services" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export function DesktopNav() {
-  const pathname = usePathname();
+  const scrollToSection = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string
+  ) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
 
   return (
     <nav className="hidden md:flex items-center gap-6">
       {links.map((link) => (
-        <Link
+        <a
           key={link.href}
           href={link.href}
-          className={`text-sm transition ${
-            pathname === link.href
-              ? "text-brand-700 font-semibold"
-              : "text-gray-600 hover:text-brand-700"
-          }`}
+          onClick={(e) => scrollToSection(e, link.href)}
+          className="text-sm transition text-gray-600 hover:text-brand-700 cursor-pointer"
         >
           {link.label}
-        </Link>
+        </a>
       ))}
-      <Link href="/contact" className="btn-primary ml-2">
+      <a
+        href="#contact"
+        onClick={(e) => scrollToSection(e, "#contact")}
+        className="btn-primary ml-2 cursor-pointer"
+      >
         Book a Session
-      </Link>
+      </a>
     </nav>
   );
 }

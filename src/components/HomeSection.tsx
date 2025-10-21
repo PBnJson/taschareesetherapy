@@ -3,69 +3,50 @@
 import { useState } from "react";
 import Button from "../ui/Button";
 import Modal from "../ui/Modal";
-// import { InlineWidget } from "react-calendly";
+import { InlineWidget } from "react-calendly";
+import Image from "next/image";
 
 export default function HomeSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
-    <div className="pt-20">
+    <div>
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-navy via-primary to-sage min-h-[80vh] flex items-center">
-        <div className="absolute inset-0 opacity-10">
-          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern
-                id="leaves"
-                x="0"
-                y="0"
-                width="100"
-                height="100"
-                patternUnits="userSpaceOnUse"
-              >
-                <path
-                  d="M20 50 Q30 30, 40 50 T60 50"
-                  stroke="white"
-                  fill="none"
-                  strokeWidth="2"
-                  opacity="0.3"
-                />
-              </pattern>
-            </defs>
-            <rect width="100%" height="100%" fill="url(#leaves)" />
-          </svg>
-        </div>
-
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="text-white">
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
+      <section className="relative min-h-[80vh] flex items-center bg-gradient-to-br from-[var(--surface)] via-[var(--accent)] to-[var(--muted)]">
+        <div className="container relative z-10 mx-auto px-4">
+          <div className="grid items-center gap-6 pl-2 pr-2 md:grid-cols-2">
+            <div className="text-fg">
+              <h1 className="mb-6 text-5xl font-bold leading-tight md:text-6xl font-serif">
                 Welcome Home to Healing
               </h1>
-              <p className="text-xl md:text-2xl mb-8 text-white/90 font-serif italic">
-                A safe space for veterans and their families to find peace,
-                understanding, and strength.
+
+              <p className="mb-8 text-xl md:text-2xl italic font-serif/normal text-fg/80">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
+                repellat consectetur magni maiores amet earum
               </p>
-              <p className="text-lg mb-8 leading-relaxed">
-                I understand the unique challenges you face. Whether you're
-                dealing with PTSD, transition stress, or relationship struggles,
-                I'm here to walk this path with you. Virtual sessions mean you
-                can connect from wherever you feel most comfortable.
+
+              <p className="mb-8 text-lg leading-relaxed">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Error
+                consequatur dolores repellat tenetur. Perferendis aperiam sed
+                provident animi nihil rerum expedita corporis culpa molestias
+                impedit.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4">
+
+              <div className="flex flex-col gap-4 sm:flex-row">
                 <Button onClick={() => setIsModalOpen(true)}>
                   Book a Session
                 </Button>
-                <Button variant="secondary">Learn More About Services</Button>
+                <Button variant="secondary">Learn About Services</Button>
               </div>
             </div>
 
-            <div className="relative">
-              <div className="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border-2 border-white/20">
-                <img
-                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=800&h=1000&fit=crop"
-                  alt="Dr. Sarah Mitchell - Therapist for Veterans"
-                  className="rounded-2xl shadow-2xl w-full"
+            <div className="relative mx-auto w-fit">
+              <div className="overflow-hidden rounded-3xl border-8 border-white/10 bg-white/5 backdrop-blur-sm">
+                <Image
+                  src={"/images/tascha_credentials.jpeg"}
+                  width={300}
+                  height={400}
+                  alt="Tascha sitting and smiling with credentials behind her."
                 />
               </div>
             </div>
@@ -74,13 +55,13 @@ export default function HomeSection() {
       </section>
 
       {/* Trust Section */}
-      <section className="py-16 bg-white">
+      <section className="bg-bg py-16">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8 text-center">
+          <div className="grid gap-8 text-center md:grid-cols-3">
             <div className="p-6">
-              <div className="w-16 h-16 bg-sage/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent/20">
                 <svg
-                  className="w-8 h-8 text-sage"
+                  className="h-8 w-8 text-accent"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -93,18 +74,18 @@ export default function HomeSection() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-navy">
+              <h3 className="mb-2 text-xl font-semibold text-fg">
                 Veteran-Focused
               </h3>
-              <p className="text-gray-600">
+              <p className="text-muted">
                 Specialized understanding of military culture and challenges
               </p>
             </div>
 
             <div className="p-6">
-              <div className="w-16 h-16 bg-lavender/20 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-surface/30">
                 <svg
-                  className="w-8 h-8 text-accent"
+                  className="h-8 w-8 text-accent"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -117,18 +98,18 @@ export default function HomeSection() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-navy">
+              <h3 className="mb-2 text-xl font-semibold text-fg">
                 100% Virtual
               </h3>
-              <p className="text-gray-600">
+              <p className="text-muted">
                 Connect from the comfort and privacy of your own space
               </p>
             </div>
 
             <div className="p-6">
-              <div className="w-16 h-16 bg-navy/10 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-fg/10">
                 <svg
-                  className="w-8 h-8 text-navy"
+                  className="h-8 w-8 text-fg"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -141,10 +122,10 @@ export default function HomeSection() {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-2 text-navy">
+              <h3 className="mb-2 text-xl font-semibold text-fg">
                 Compassionate Care
               </h3>
-              <p className="text-gray-600">
+              <p className="text-muted">
                 A judgment-free environment where you can be yourself
               </p>
             </div>
@@ -153,29 +134,29 @@ export default function HomeSection() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-16 bg-gradient-to-br from-sage/10 to-lavender/10">
+      <section className="bg-gradient-to-br from-[var(--bg)] to-[var(--surface)] py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-4xl font-bold text-center mb-12 text-navy">
+          <h2 className="mb-12 text-center text-4xl font-bold text-fg font-serif">
             What Veterans Are Saying
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            <div className="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-sage">
-              <p className="text-gray-700 mb-4 italic font-serif">
+          <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2">
+            <div className="rounded-2xl border-l-4 border-accent bg-white p-8 shadow-lg">
+              <p className="mb-4 italic text-gray-700 font-serif">
                 "After struggling for years, I finally found someone who gets
                 it. The virtual sessions made it so much easier to open up. I'm
                 sleeping better and my family says I'm more present."
               </p>
-              <p className="text-navy font-semibold">- Marine Corps Veteran</p>
+              <p className="font-semibold text-fg">- Marine Corps Veteran</p>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl shadow-lg border-l-4 border-lavender">
-              <p className="text-gray-700 mb-4 italic font-serif">
+            <div className="rounded-2xl border-l-4 border-muted bg-white p-8 shadow-lg">
+              <p className="mb-4 italic text-gray-700 font-serif">
                 "I was skeptical about online therapy, but being able to talk
                 from home made all the difference. She helped me work through my
                 PTSD triggers and gave me tools I use every day."
               </p>
-              <p className="text-navy font-semibold">- Army Veteran</p>
+              <p className="font-semibold text-fg">- Army Veteran</p>
             </div>
           </div>
         </div>
