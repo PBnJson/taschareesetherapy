@@ -2,30 +2,39 @@
 
 @import "tailwindcss";
 
+/* Define custom theme colors for Tailwind v4 */
+@theme {
+  --color-bg: #f7e6ca;
+  --color-surface: #e8d59e;
+  --color-accent: #d9bbb0;
+  --color-muted: #ad9c8e;
+  --color-fg: #2b2b2b;
+}
+
 /* Default theme (Quiet Luxury) */
 :root[data-theme="quiet"] {
-  --bg: #f7e6ca; /* quiet-100 */
-  --surface: #e8d59e; /* quiet-300 */
-  --accent: #d9bbb0; /* quiet-500 */
-  --muted: #ad9c8e; /* quiet-700 */
-  --fg: #2b2b2b; /* pick a readable text color */
+  --color-bg: #f7e6ca;
+  --color-surface: #e8d59e;
+  --color-accent: #d9bbb0;
+  --color-muted: #ad9c8e;
+  --color-fg: #2b2b2b;
 }
 
 /* Alt theme (Siltstone) */
 :root[data-theme="silt"] {
-  --bg: #fff5b8; /* silt-300 */
-  --surface: #cbbd93; /* silt-100 */
-  --accent: #ffb16e; /* silt-500 */
-  --muted: #cca25a; /* silt-700 */
-  --fg: #2b2b2b;
+  --color-bg: #fff5b8;
+  --color-surface: #cbbd93;
+  --color-accent: #ffb16e;
+  --color-muted: #cca25a;
+  --color-fg: #2b2b2b;
 }
 
 /* Apply globals using the variables */
 @layer base {
   html,
   body {
-    @apply font-sans;
-    background: var(--bg);
-    color: var(--fg);
+    font-family: "Lato", sans-serif;
+    background: var(--color-bg);
+    color: var(--color-fg);
   }
 }

@@ -1,5 +1,7 @@
 "use client";
 
+import Button from "../ui/Button";
+
 const links = [
   { href: "#home", label: "Home" },
   { href: "#about", label: "About" },
@@ -20,24 +22,20 @@ export function DesktopNav() {
   };
 
   return (
-    <nav className="hidden md:flex items-center gap-6">
+    <nav className="hidden md:flex items-center gap-6 mr-8">
       {links.map((link) => (
         <a
           key={link.href}
           href={link.href}
           onClick={(e) => scrollToSection(e, link.href)}
-          className="text-sm transition text-gray-600 hover:text-brand-700 cursor-pointer"
+          className="text-sm transition text-muted hover:text-fg cursor-pointer font-medium"
         >
           {link.label}
         </a>
       ))}
-      <a
-        href="#contact"
-        onClick={(e) => scrollToSection(e, "#contact")}
-        className="btn-primary ml-2 cursor-pointer"
-      >
-        Book a Session
-      </a>
+      <Button className="z-50 px-4 py-2 ml-2 cursor-pointer rounded-lg border-2 border-fg bg-accent text-fg font-semibold hover:bg-accent/80 transition-colors">
+        Book Now
+      </Button>
     </nav>
   );
 }

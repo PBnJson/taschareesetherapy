@@ -160,7 +160,7 @@ export default function ContactSection() {
 
                 {submitStatus === "success" && (
                   <p className="text-green-600 text-center">
-                    Message sent successfully! I'll get back to you soon.
+                    Message sent successfully! I&apos;ll get back to you soon.
                   </p>
                 )}
 
@@ -281,7 +281,7 @@ export default function ContactSection() {
                   Crisis Resources
                 </h3>
                 <p className="text-sm text-gray-600 mb-4">
-                  If you're in crisis, please contact:
+                  If you&apos;re in crisis, please contact:
                 </p>
                 <div className="space-y-2 text-sm">
                   <p>

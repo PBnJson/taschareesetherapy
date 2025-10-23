@@ -12,7 +12,7 @@ export default function HomeSection() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center bg-gradient-to-br from-[var(--surface)] via-[var(--accent)] to-[var(--muted)]">
+      <section className="relative min-h-[80vh] flex items-center bg-gradient-to-br from-surface via-accent to-muted">
         <div className="container relative z-10 mx-auto px-4">
           <div className="grid items-center gap-6 pl-2 pr-2 md:grid-cols-2">
             <div className="text-fg">
@@ -36,12 +36,12 @@ export default function HomeSection() {
                 <Button onClick={() => setIsModalOpen(true)}>
                   Book a Session
                 </Button>
-                <Button variant="secondary">Learn About Services</Button>
+                <Button variant="primary">Learn About Services</Button>
               </div>
             </div>
 
             <div className="relative mx-auto w-fit">
-              <div className="overflow-hidden rounded-3xl border-8 border-white/10 bg-white/5 backdrop-blur-sm">
+              <div className="overflow-hidden rounded-3xl border-8 border-fg/10 bg-fg/5 backdrop-blur-sm">
                 <Image
                   src={"/images/tascha_credentials.jpeg"}
                   width={300}
@@ -134,27 +134,29 @@ export default function HomeSection() {
       </section>
 
       {/* Testimonials */}
-      <section className="bg-gradient-to-br from-[var(--bg)] to-[var(--surface)] py-16">
+      <section className="bg-gradient-to-br from-bg to-surface py-16">
         <div className="container mx-auto px-4">
           <h2 className="mb-12 text-center text-4xl font-bold text-fg font-serif">
             What Veterans Are Saying
           </h2>
 
           <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2">
-            <div className="rounded-2xl border-l-4 border-accent bg-white p-8 shadow-lg">
-              <p className="mb-4 italic text-gray-700 font-serif">
-                "After struggling for years, I finally found someone who gets
-                it. The virtual sessions made it so much easier to open up. I'm
-                sleeping better and my family says I'm more present."
+            <div className="rounded-2xl border-l-4 border-accent bg-surface/50 p-8 shadow-lg">
+              <p className="mb-4 italic text-fg/90 font-serif">
+                &quot;After struggling for years, I finally found someone who
+                gets it. The virtual sessions made it so much easier to open up.
+                I&apos;m sleeping better and my family says I&apos;m more
+                present.&quot;
               </p>
               <p className="font-semibold text-fg">- Marine Corps Veteran</p>
             </div>
 
-            <div className="rounded-2xl border-l-4 border-muted bg-white p-8 shadow-lg">
-              <p className="mb-4 italic text-gray-700 font-serif">
-                "I was skeptical about online therapy, but being able to talk
-                from home made all the difference. She helped me work through my
-                PTSD triggers and gave me tools I use every day."
+            <div className="rounded-2xl border-l-4 border-muted bg-surface/50 p-8 shadow-lg">
+              <p className="mb-4 italic text-fg/90 font-serif">
+                &quot;I was skeptical about online therapy, but being able to
+                talk from home made all the difference. She helped me work
+                through my PTSD triggers and gave me tools I use every
+                day.&quot;
               </p>
               <p className="font-semibold text-fg">- Army Veteran</p>
             </div>

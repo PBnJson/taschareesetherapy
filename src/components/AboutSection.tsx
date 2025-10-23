@@ -1,4 +1,5 @@
 import Card from "../ui/Card";
+import Image from "next/image";
 
 export default function AboutSection() {
   return (
@@ -12,34 +13,35 @@ export default function AboutSection() {
 
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               <div className="md:col-span-1">
-                <img
-                  src="https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&h=800&fit=crop"
-                  alt="Dr. Sarah Mitchell"
-                  className="rounded-2xl shadow-xl w-full"
+                <Image
+                  src="/images/tascha_black_bg.jpeg"
+                  alt="Tascha Reese Therapy"
+                  className="rounded-2xl shadow-xl w-full h-full object-cover"
+                  width={300}
+                  height={450}
                 />
               </div>
 
               <div className="md:col-span-2 space-y-6">
                 <p className="text-lg leading-relaxed text-gray-700 font-serif italic">
-                  "My calling to work with veterans came from watching my own
-                  father struggle after his service. I saw firsthand how
-                  difficult it can be to ask for help, and how transformative
-                  the right support can be."
+                  &quot;My calling to work with veterans came from lorem ipsum
+                  dolor sit amet consectetur adipisicing elit. Possimus
+                  reiciendis odit optio aliquid, voluptatum sint.&quot;
                 </p>
 
                 <p className="text-lg leading-relaxed text-gray-700">
-                  I'm Dr. Sarah Mitchell, a licensed clinical psychologist with
-                  over 12 years of experience specializing in trauma, PTSD, and
-                  veteran mental health. I've dedicated my career to creating a
-                  safe, understanding space where those who've served can find
-                  healing without judgment.
+                  I&apos;m Dr. Sarah Mitchell, a licensed clinical psychologist
+                  with over 12 years of experience specializing in trauma, PTSD,
+                  and veteran mental health. I&apos;ve dedicated my career to
+                  creating a safe, understanding space where those who&apos;ve
+                  served can find healing without judgment.
                 </p>
 
                 <p className="text-lg leading-relaxed text-gray-700">
-                  I believe therapy should meet you where you are. That's why I
-                  offer 100% virtual sessions—so you can connect from wherever
-                  you feel most comfortable, whether that's your living room,
-                  your car, or a quiet spot outdoors.
+                  I believe therapy should meet you where you are. That&apos;s
+                  why I offer 100% virtual sessions—so you can connect from
+                  wherever you feel most comfortable, whether that&apos;s your
+                  living room, your car, or a quiet spot outdoors.
                 </p>
               </div>
             </div>
@@ -67,11 +69,11 @@ export default function AboutSection() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg text-navy mb-2">
-                      Evidence-Based
+                      Person First
                     </h3>
                     <p className="text-gray-600">
-                      Utilizing proven therapies like CBT, EMDR, and
-                      trauma-focused approaches
+                      You matter. You are not your symptoms and I will treat you
+                      with respect and dignity.
                     </p>
                   </div>
                 </div>
@@ -124,8 +126,7 @@ export default function AboutSection() {
                       Strength-Based
                     </h3>
                     <p className="text-gray-600">
-                      Building on your resilience and the skills that got you
-                      through tough times
+                      Building resilience and the skills to get you through
                     </p>
                   </div>
                 </div>
@@ -151,8 +152,7 @@ export default function AboutSection() {
                       Compassionate
                     </h3>
                     <p className="text-gray-600">
-                      Creating a judgment-free space where you can be completely
-                      yourself
+                      Creating a judgment-free space where you can be yourself
                     </p>
                   </div>
                 </div>
@@ -166,38 +166,27 @@ export default function AboutSection() {
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start">
                   <span className="text-sage mr-3 mt-1">▸</span>
-                  <span>
-                    Ph.D. in Clinical Psychology, University of California, San
-                    Diego
-                  </span>
+                  <span>ABCD Certification</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-sage mr-3 mt-1">▸</span>
-                  <span>Licensed Clinical Psychologist (PSY12345)</span>
+                  <span>Licensed in Texas</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-sage mr-3 mt-1">▸</span>
-                  <span>
-                    Certified in EMDR (Eye Movement Desensitization and
-                    Reprocessing)
-                  </span>
+                  <span>Certified in Cognitive Behavioral Therapy</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-sage mr-3 mt-1">▸</span>
-                  <span>
-                    Advanced Training in Trauma-Focused Cognitive Behavioral
-                    Therapy
-                  </span>
+                  <span>Training in.............</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-sage mr-3 mt-1">▸</span>
-                  <span>
-                    VA Healthcare System Clinical Experience (5 years)
-                  </span>
+                  <span>VA Healthcare Experience</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-sage mr-3 mt-1">▸</span>
-                  <span>Member, American Psychological Association</span>
+                  <span>Member of the APA</span>
                 </li>
               </ul>
             </Card>

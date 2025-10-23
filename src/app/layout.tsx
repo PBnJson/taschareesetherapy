@@ -6,6 +6,7 @@ import { MobilNavWrapper } from "@/components/MobilNavWrapper"; // keeping your 
 import { Footer } from "@/components/Footer";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import "./globals.css";
+import Image from "next/image";
 
 const lato = Lato({
   subsets: ["latin"],
@@ -42,7 +43,13 @@ export default function RootLayout({
       <body className="font-sans flex min-h-screen flex-col">
         <header className="sticky top-0 z-50 border-b border-muted/40 bg-white/80 backdrop-blur">
           <div className="container flex h-16 items-center justify-between">
-            <div className="font-semibold">Tascha Reese</div>
+            <Image
+              src="/images/tascha_logo.png"
+              alt="Tascha Reese Therapy Logo"
+              width={150}
+              height={150}
+              className="w-15 h-15 ml-8"
+            />
             <DesktopNavWrapper />
             <MobilNavWrapper />
           </div>

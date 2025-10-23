@@ -15,7 +15,7 @@ export default function Button({
     "px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105";
 
   const variantStyles = {
-    primary: "bg-navy text-white hover:bg-primary-light shadow-lg",
+    primary: "bg-white text-black hover:bg-primary-light shadow-lg",
     secondary: "bg-sage text-white hover:bg-secondary-dark shadow-lg",
   };
 
