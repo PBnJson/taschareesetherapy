@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 import Button from "../ui/Button";
-import Modal from "../ui/Modal";
-import { InlineWidget } from "react-calendly";
 import Image from "next/image";
 
 export default function HomeSection() {
