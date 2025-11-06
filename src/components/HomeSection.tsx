@@ -1,70 +1,165 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Button from "../ui/Button";
 import Image from "next/image";
+import { motion } from "motion/react";
+
+// Custom hook for intersection observation
+function useIntersectionObserver(threshold = 0.25) {
+  const [isVisible, setIsVisible] = useState(false);
+  const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          }
+        });
+      },
+      { threshold }
+    );
+
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+
+    return () => {
+      if (ref.current) {
+        observer.unobserve(ref.current);
+      }
+    };
+  }, [threshold]);
+
+  return { ref, isVisible };
+}
 
 export default function HomeSection() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  // Use the custom hook for each section
+  const trustSection = useIntersectionObserver(0.25);
+  const testimonialsSection = useIntersectionObserver(0.25);
+
+  useEffect(() => {
+    // Check screen size
+    const checkScreenSize = () => {
+      setIsDesktop(window.innerWidth >= 768);
+    };
+
+    checkScreenSize();
+    window.addEventListener("resize", checkScreenSize);
+
+    return () => {
+      window.removeEventListener("resize", checkScreenSize);
+    };
+  }, []);
 
   return (
     <div>
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center bg-gradient-to-br from-surface via-accent to-muted">
         <div className="container relative z-10 mx-auto px-4">
-          <div className="grid items-center gap-6 pl-2 pr-2 md:grid-cols-2">
+          <div className="grid items-center gap-6 md:grid-cols-2">
             <div className="text-fg">
-              <h1 className="mb-6 text-5xl font-bold leading-tight md:text-6xl font-serif">
+              <motion.h1
+                className="mb-6 text-5xl font-bold leading-tight md:text-6xl font-serif"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
                 Welcome Home to Healing
-              </h1>
+              </motion.h1>
 
-              <p className="mb-8 text-xl md:text-2xl italic font-serif/normal text-fg/80">
+              <motion.p
+                className="mb-8 text-xl md:text-2xl italic font-serif/normal text-fg/80"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              >
                 I believe we all deserve unbiased support, honest feedback, and
                 a fresh start. As a licensed clinical social worker with over 30
                 years of experience in trauma therapy and PTSD treatment,
                 I&apos;m here to provide judgment-free mental health counseling.
-              </p>
+              </motion.p>
 
-              <p className="mb-8 text-lg leading-relaxed">
+              <motion.p
+                className="mb-8 text-lg leading-relaxed"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              >
                 Secure virtual therapy sessions offer specialized support for
                 anxiety, depression, PTSD, and life transitions, all from the
                 comfort of your own space. Why not start your journey today?
                 Simply reach out and I&apos;ll be there, every step of the way.
-              </p>
+              </motion.p>
 
-              <div className="flex flex-col gap-4 sm:flex-row">
+              <motion.div
+                className="flex flex-col gap-4 sm:flex-row"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+              >
                 <Button onClick={() => setIsModalOpen(true)}>
                   Book a Session
                 </Button>
                 <Button variant="primary">Learn About Services</Button>
-              </div>
-              <div>
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+              >
                 <p className="mt-2 text-sm text-gray-600 font-italic">
                   Most insurances accepted
                 </p>
-              </div>
+              </motion.div>
             </div>
 
-            <div className="relative mx-auto w-fit">
+            <motion.div
+              className="relative mx-auto w-fit"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
               <div className="overflow-hidden rounded-3xl border-8 border-fg/10 bg-fg/5 backdrop-blur-sm">
                 <Image
                   src={"/images/tascha_credentials.jpeg"}
+                  priority={true}
                   width={300}
                   height={400}
                   alt="Tascha sitting and smiling with credentials behind her."
                 />
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Trust Section */}
-      <section className="bg-bg py-16">
+      <section ref={trustSection.ref} className="bg-bg py-16">
         <div className="container mx-auto px-4">
           <div className="grid gap-8 text-center md:grid-cols-3">
-            <div className="p-6">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent/20">
+            {/* Trust Item 1 */}
+            <motion.div
+              className="p-6"
+              initial={{ opacity: 0, x: 100 }}
+              animate={
+                trustSection.isVisible
+                  ? { opacity: 1, x: 0 }
+                  : { opacity: 0, x: 100 }
+              }
+              transition={{
+                duration: 0.6,
+                delay: isDesktop ? 0.4 : 0,
+                ease: "easeOut",
+              }}
+            >
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border-2 border-black/25 bg-accent/20 p-2">
                 <svg
                   className="h-8 w-8 text-accent"
                   fill="none"
@@ -86,10 +181,23 @@ export default function HomeSection() {
                 30 year practitioner with a unique understanding of human
                 behavior
               </p>
-            </div>
-
-            <div className="p-6">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-surface/30">
+            </motion.div>
+            {/* Trust Item 2 */}
+            <motion.div
+              className="p-6"
+              initial={{ opacity: 0, x: 100 }}
+              animate={
+                trustSection.isVisible
+                  ? { opacity: 1, x: 0 }
+                  : { opacity: 0, x: 100 }
+              }
+              transition={{
+                duration: 0.6,
+                delay: 0.2,
+                ease: "easeOut",
+              }}
+            >
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border-2 border-black/25 bg-surface/30 p-2">
                 <svg
                   className="h-8 w-8 text-accent"
                   fill="none"
@@ -110,12 +218,25 @@ export default function HomeSection() {
               <p className="text-muted">
                 Connect from the comfort and privacy of your own space
               </p>
-            </div>
-
-            <div className="p-6">
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-fg/10">
+            </motion.div>
+            {/* Trust Item 3 */}
+            <motion.div
+              className="p-6"
+              initial={{ opacity: 0, x: 100 }}
+              animate={
+                trustSection.isVisible
+                  ? { opacity: 1, x: 0 }
+                  : { opacity: 0, x: 100 }
+              }
+              transition={{
+                duration: 0.6,
+                delay: isDesktop ? 0 : 0.4,
+                ease: "easeOut",
+              }}
+            >
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border-2 border-black/25 bg-accent/25 p-2">
                 <svg
-                  className="h-8 w-8 text-fg"
+                  className="h-8 w-8 text-red-500/50"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -134,14 +255,24 @@ export default function HomeSection() {
               <p className="text-muted">
                 A judgment-free environment where you can be yourself
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Testimonials */}
-      <section className="bg-gradient-to-br from-bg to-surface py-16">
-        <div className="container mx-auto px-4">
+      <section
+        ref={testimonialsSection.ref}
+        className="bg-gradient-to-br from-bg to-surface py-16"
+      >
+        <motion.div
+          className="container mx-auto px-4"
+          initial={{ opacity: 0 }}
+          animate={
+            testimonialsSection.isVisible ? { opacity: 1 } : { opacity: 0 }
+          }
+          transition={{ duration: 0.8, ease: "easeOut" }}
+        >
           <h2 className="mb-12 text-center text-4xl font-bold text-fg font-serif">
             What People Are Saying
           </h2>
@@ -167,7 +298,7 @@ export default function HomeSection() {
               <p className="font-semibold text-fg">-Anonymous</p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
     </div>
   );

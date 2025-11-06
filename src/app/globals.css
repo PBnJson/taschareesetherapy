@@ -29,6 +29,14 @@
   --color-fg: #2b2b2b;
 }
 
+:root[data-theme="accessible"] {
+  --color-bg: #fefce8;
+  --color-surface: #e0e7ff;
+  --color-accent: #2563eb;
+  --color-muted: #64748b;
+  --color-fg: #0f172a;
+}
+
 /* Apply globals using the variables */
 @layer base {
   html,
