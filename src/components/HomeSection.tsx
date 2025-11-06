@@ -21,15 +21,15 @@ export default function HomeSection() {
               <p className="mb-8 text-xl md:text-2xl italic font-serif/normal text-fg/80">
                 I believe we all deserve unbiased support, honest feedback, and
                 a fresh start. As a licensed clinical social worker with over 30
-                years of experience in trauma therapy and PTSD treatment, I'm
-                here to provide judgment-free mental health counseling.
+                years of experience in trauma therapy and PTSD treatment,
+                I&apos;m here to provide judgment-free mental health counseling.
               </p>
 
               <p className="mb-8 text-lg leading-relaxed">
                 Secure virtual therapy sessions offer specialized support for
                 anxiety, depression, PTSD, and life transitions, all from the
                 comfort of your own space. Why not start your journey today?
-                Simply reach out and I'll be there, every step of the way.
+                Simply reach out and I&apos;ll be there, every step of the way.
               </p>
 
               <div className="flex flex-col gap-4 sm:flex-row">
