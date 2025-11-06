@@ -33,8 +33,11 @@ export default function AboutSection() {
                   30 years of experience specializing in trauma, PTSD, veteran
                   mental health, and individual mental health. I&apos;ve
                   dedicated my career to creating a safe, understanding space
-                  where those who&apos;ve served can find healing without
-                  judgment.
+                  where{" "}
+                  <span className="font-bold italic tracking-wider">
+                    anyone
+                  </span>{" "}
+                  can find healing without judgment.
                 </p>
 
                 <p className="text-lg leading-relaxed text-gray-700">
