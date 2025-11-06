@@ -38,6 +38,11 @@ export default function HomeSection() {
                 </Button>
                 <Button variant="primary">Learn About Services</Button>
               </div>
+              <div>
+                <p className="mt-2 text-sm text-gray-600 font-italic">
+                  Most insurances accepted
+                </p>
+              </div>
             </div>
 
             <div className="relative mx-auto w-fit">
@@ -75,10 +80,11 @@ export default function HomeSection() {
                 </svg>
               </div>
               <h3 className="mb-2 text-xl font-semibold text-fg">
-                Veteran-Focused
+                Individual-Focused
               </h3>
               <p className="text-muted">
-                Specialized understanding of military culture and challenges
+                30 year practitioner with a unique understanding of human
+                behavior
               </p>
             </div>
 
@@ -137,7 +143,7 @@ export default function HomeSection() {
       <section className="bg-gradient-to-br from-bg to-surface py-16">
         <div className="container mx-auto px-4">
           <h2 className="mb-12 text-center text-4xl font-bold text-fg font-serif">
-            What Veterans Are Saying
+            What People Are Saying
           </h2>
 
           <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2">
@@ -148,7 +154,7 @@ export default function HomeSection() {
                 I&apos;m sleeping better and my family says I&apos;m more
                 present.&quot;
               </p>
-              <p className="font-semibold text-fg">- Marine Corps Veteran</p>
+              <p className="font-semibold text-fg">-Veteran</p>
             </div>
 
             <div className="rounded-2xl border-l-4 border-muted bg-surface/50 p-8 shadow-lg">
@@ -158,22 +164,11 @@ export default function HomeSection() {
                 through my PTSD triggers and gave me tools I use every
                 day.&quot;
               </p>
-              <p className="font-semibold text-fg">- Army Veteran</p>
+              <p className="font-semibold text-fg">-Anonymous</p>
             </div>
           </div>
         </div>
       </section>
-
-      {/* Calendly Modal */}
-      <Modal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        title="Schedule Your Session"
-      >
-        <div className="h-[600px]">
-          <InlineWidget url="https://calendly.com/your-calendly-url" />
-        </div>
-      </Modal>
     </div>
   );
 }

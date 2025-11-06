@@ -8,9 +8,8 @@ export default function AboutSection() {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h1 className="text-5xl font-bold text-navy mb-8 text-center">
-              About Dr. Sarah Mitchell
+              About Tascha Reese
             </h1>
-
             <div className="grid md:grid-cols-3 gap-8 mb-12">
               <div className="md:col-span-1">
                 <Image
@@ -24,28 +23,29 @@ export default function AboutSection() {
 
               <div className="md:col-span-2 space-y-6">
                 <p className="text-lg leading-relaxed text-gray-700 font-serif italic">
-                  &quot;My calling to work with veterans came from lorem ipsum
+                  &quot;My calling to become a therapist came from lorem ipsum
                   dolor sit amet consectetur adipisicing elit. Possimus
                   reiciendis odit optio aliquid, voluptatum sint.&quot;
                 </p>
 
                 <p className="text-lg leading-relaxed text-gray-700">
-                  I&apos;m Dr. Sarah Mitchell, a licensed clinical psychologist
-                  with over 12 years of experience specializing in trauma, PTSD,
-                  and veteran mental health. I&apos;ve dedicated my career to
-                  creating a safe, understanding space where those who&apos;ve
-                  served can find healing without judgment.
+                  I&apos;m Tascha, a licensed clinical social worker with over
+                  30 years of experience specializing in trauma, PTSD, veteran
+                  mental health, and individual mental health. I&apos;ve
+                  dedicated my career to creating a safe, understanding space
+                  where those who&apos;ve served can find healing without
+                  judgment.
                 </p>
 
                 <p className="text-lg leading-relaxed text-gray-700">
                   I believe therapy should meet you where you are. That&apos;s
-                  why I offer 100% virtual sessions—so you can connect from
-                  wherever you feel most comfortable, whether that&apos;s your
-                  living room, your car, or a quiet spot outdoors.
+                  why I offer 100% virtual sessions you can connect from
+                  wherever you feel most comfortable and safe, whether
+                  that&apos;s your living room, your car, or a quiet spot
+                  outdoors.
                 </p>
               </div>
             </div>
-
             <Card className="mb-12">
               <h2 className="text-3xl font-semibold text-navy mb-6">
                 My Approach
@@ -99,8 +99,8 @@ export default function AboutSection() {
                       Culturally Informed
                     </h3>
                     <p className="text-gray-600">
-                      Deep understanding of military culture, values, and unique
-                      challenges
+                      Deep understanding of individual culture, values, and
+                      unique challenges
                     </p>
                   </div>
                 </div>
@@ -158,15 +158,17 @@ export default function AboutSection() {
                 </div>
               </div>
             </Card>
-
+            // Take out Credentials and Training // Add a section for
+            supervisory role for individuals or groups looking for full
+            licensure.
             <Card>
               <h2 className="text-3xl font-semibold text-navy mb-6">
-                Credentials & Training
+                Supervisory Role{" "}
               </h2>
               <ul className="space-y-3 text-gray-700">
                 <li className="flex items-start">
                   <span className="text-sage mr-3 mt-1">▸</span>
-                  <span>ABCD Certification</span>
+                  <span>Licensed Clinical Social Worker</span>
                 </li>
                 <li className="flex items-start">
                   <span className="text-sage mr-3 mt-1">▸</span>
@@ -174,19 +176,7 @@ export default function AboutSection() {
                 </li>
                 <li className="flex items-start">
                   <span className="text-sage mr-3 mt-1">▸</span>
-                  <span>Certified in Cognitive Behavioral Therapy</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sage mr-3 mt-1">▸</span>
-                  <span>Training in.............</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sage mr-3 mt-1">▸</span>
-                  <span>VA Healthcare Experience</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-sage mr-3 mt-1">▸</span>
-                  <span>Member of the APA</span>
+                  <span>Indiviual and Group Supervision</span>
                 </li>
               </ul>
             </Card>

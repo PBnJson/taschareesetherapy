@@ -2,7 +2,7 @@ export default function JsonLd() {
   const schema = {
     "@context": "https://schema.org",
     "@type": "Psychologist",
-    name: "Dr. Sarah Mitchell",
+    name: "Tascha Reese",
     image: "https://yourdomain.com/images/dr-mitchell.jpg",
     jobTitle: "Licensed Clinical Psychologist",
     description:
