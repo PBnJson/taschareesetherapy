@@ -105,9 +105,10 @@ export default function ServicesSection() {
             </h1>
             <p className="text-xl text-gray-700 leading-relaxed">
               Specialized mental health support designed specifically for
-              veterans and their families. All sessions are conducted via secure
-              video conferencing, allowing you to receive care from the comfort
-              and privacy of your own space.
+              individuals and their families who want or need the privacy of a
+              home-based therapy setting. All sessions are conducted via secure
+              video conferencing unless otherwise discussed, allowing you to
+              receive care from the comfort and privacy of your own space.
             </p>
           </div>
 
@@ -189,8 +190,7 @@ export default function ServicesSection() {
                     conferencing
                   </p>
                   <p>
-                    <strong>Insurance:</strong> Many plans accepted, including
-                    Tricare
+                    <strong>Insurance:</strong> Many plans are accepted
                   </p>
                   <p>
                     <strong>Availability:</strong> Evening and weekend
