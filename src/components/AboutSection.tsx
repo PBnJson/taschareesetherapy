@@ -158,9 +158,9 @@ export default function AboutSection() {
                 </div>
               </div>
             </Card>
-            // Take out Credentials and Training // Add a section for
+            {/* Take out Credentials and Training // Add a section for
             supervisory role for individuals or groups looking for full
-            licensure.
+            licensure. */}
             <Card>
               <h2 className="text-3xl font-semibold text-navy mb-6">
                 Supervisory Role{" "}
