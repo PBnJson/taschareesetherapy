@@ -134,7 +134,7 @@ export default function HomeSection() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <div className="overflow-hidden rounded-3xl border-8 border-fg/10 bg-fg/5 backdrop-blur-sm">
+              <div className="overflow-hidden rounded-t-[160px] rounded-b-none border-4 border-fg/10 bg-fg/5 backdrop-blur-sm">
                 <Image
                   src={"/images/tascha_credentials.jpeg"}
                   priority={true}
