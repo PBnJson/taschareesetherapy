@@ -4,13 +4,13 @@ import Image from "next/image";
 export function Footer() {
   return (
     <footer className="border-t border-gray-200 mt-auto">
-      <div className="container place-items-center py-10 grid gap-8 md:grid-cols-3">
+      <div className="container place-items-center py-5 grid gap-4 md:grid-cols-3">
         <div className="place-items-center">
           <Image
             src="/images/tascha_logo.png"
             alt="Tascha Reese Therapy Logo"
-            width={200}
-            height={180}
+            width={180}
+            height={160}
           />
         </div>
         <div>
@@ -47,7 +47,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-gray-200">
-        <div className="container py-6 text-xs text-gray-500">
+        <div className="container py-2 text-xs text-gray-500">
           © {new Date().getFullYear()} Tascha Reese. All rights reserved.
         </div>
       </div>
