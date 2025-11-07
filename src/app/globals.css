@@ -30,11 +30,11 @@
 }
 
 :root[data-theme="accessible"] {
-  --color-bg: #fefce8;
-  --color-surface: #e0e7ff;
-  --color-accent: #2563eb;
-  --color-muted: #64748b;
-  --color-fg: #0f172a;
+  --color-bg: #f0f4f8;
+  --color-surface: #ffffff;
+  --color-accent: #4a90e2;
+  --color-muted: #6b7280;
+  --color-fg: #1f2937;
 }
 
 /* Apply globals using the variables */

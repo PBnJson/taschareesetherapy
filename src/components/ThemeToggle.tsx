@@ -1,15 +1,22 @@
 "use client";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 type Theme = "quiet" | "silt" | "accessible";
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<Theme>("quiet");
   const [isMobile, setIsMobile] = useState(false);
+  const [theme, setTheme] = useState<Theme>("quiet");
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 768);
+      const mobile = window.innerWidth < 768;
+      setIsMobile(mobile);
+
+      // Set default theme based on screen size on initial load
+      if (theme === "quiet" || theme === "silt") {
+        setTheme(mobile ? "quiet" : "silt");
+      }
     };
 
     checkScreenSize();
@@ -93,19 +100,14 @@ export function ThemeToggle() {
         aria-label="Accessible theme"
         aria-pressed={theme === "accessible"}
       >
-        <svg
-          className="h-5 w-5"
-          fill="none"
-          stroke="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"
-          />
-        </svg>
+        <Image
+          src="/images/low_vision_access.svg"
+          alt="Accessible theme"
+          width={50}
+          height={50}
+          priority={true}
+          className="p-2"
+        />
       </button>
     </div>
   );

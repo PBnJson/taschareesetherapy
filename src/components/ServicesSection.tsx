@@ -140,7 +140,7 @@ export default function ServicesSection() {
             ))}
           </div>
 
-          <Card className="max-w-4xl mx-auto bg-gradient-to-br from-navy to-primary text-white">
+          <Card className="max-w-4xl mx-auto bg-surface/90-to-bg-surface/50 text-fg/90">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <h2 className="text-3xl font-bold mb-4">
@@ -175,10 +175,10 @@ export default function ServicesSection() {
                 </ul>
               </div>
               <div>
-                <h3 className="text-2xl font-semibold mb-4">
+                <h3 className="text-2xl text-fg font-semibold mb-4">
                   Session Information
                 </h3>
-                <div className="space-y-3 text-white/90">
+                <div className="space-y-3 text-fg/90">
                   <p>
                     <strong>Duration:</strong> 50-60 minutes
                   </p>

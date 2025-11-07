@@ -6,7 +6,7 @@ import Image from "next/image";
 import { motion } from "motion/react";
 
 // Custom hook for intersection observation
-function useIntersectionObserver(threshold = 0.25) {
+function useIntersectionObserver(threshold = 0.5) {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef<HTMLElement>(null);
 
@@ -64,7 +64,7 @@ export default function HomeSection() {
       <section className="relative min-h-[80vh] flex items-center bg-gradient-to-br from-surface via-accent to-muted">
         <div className="container relative z-10 mx-auto px-4">
           <div className="grid items-center gap-6 md:grid-cols-2">
-            <div className="text-fg">
+            <div className="text-fg/90">
               <motion.h1
                 className="mb-6 text-5xl font-bold leading-tight md:text-6xl font-serif"
                 initial={{ opacity: 0, y: 20 }}
