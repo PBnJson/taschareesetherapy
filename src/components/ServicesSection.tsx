@@ -1,3 +1,5 @@
+"use client";
+
 import Card from "../ui/Card";
 import Button from "../ui/Button";
 
@@ -180,7 +182,7 @@ export default function ServicesSection() {
                 </h3>
                 <div className="space-y-3 text-fg/90">
                   <p>
-                    <strong>Duration:</strong> 50-60 minutes
+                    <strong>Duration:</strong> 1 hour unless otherwise discussed
                   </p>
                   <p>
                     <strong>Frequency:</strong> Weekly or bi-weekly (flexible)
@@ -202,11 +204,20 @@ export default function ServicesSection() {
           </Card>
 
           <div className="text-center mt-12">
-            <Button className="text-lg px-8 py-4">
+            <Button
+              className="text-lg px-8 py-4"
+              onClick={() =>
+                window.open(
+                  "https://onward-therapy-and-wellness.clientsecure.me/request/clinician",
+                  "_blank",
+                  "noopener,noreferrer"
+                )
+              }
+            >
               Schedule Your First Session
             </Button>
-            <p className="mt-4 text-gray-600">
-              First consultation is always free
+            <p className="mt-2 text-sm text-gray-600 font-italic">
+              Most insurances accepted
             </p>
           </div>
         </div>

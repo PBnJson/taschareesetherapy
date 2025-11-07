@@ -23,31 +23,34 @@ export default function AboutSection() {
 
               <div className="md:col-span-2 space-y-6">
                 <p className="text-lg leading-relaxed text-gray-700 font-serif italic">
-                  &quot;My calling to become a therapist came from lorem ipsum
-                  dolor sit amet consectetur adipisicing elit. Possimus
-                  reiciendis odit optio aliquid, voluptatum sint.&quot;
+                  &quot;My calling to become a therapist came from my own
+                  personal experiences and challenges that I faced. I found that
+                  with support, I was able to overcome and reach the goals I set
+                  for myself, as well as, heal from the inside out.&quot;
                 </p>
 
                 <p className="text-lg leading-relaxed text-gray-700">
-                  I&apos;m Tascha, a licensed clinical social worker with over
-                  30 years of experience specializing in trauma, PTSD, veteran
-                  mental health, and individual mental health. I&apos;ve
-                  dedicated my career to creating a safe, understanding space
-                  where{" "}
-                  <span className="font-bold italic tracking-wider">
-                    anyone
-                  </span>{" "}
-                  can find healing without judgment.
+                  I am a LCSW-S in private practice. I have over 30 years of
+                  experience working with clients with trauma, mood disorders,
+                  adjustment disorders, addictions, interpersonal conflict,
+                  personality disorders, and many other issues. I take a
+                  client-centered approach to helping individuals and their
+                  families find peace and reach their personal goals. I also
+                  have significant experience in medical social work and dual
+                  diagnosis, helping my clients manage emotional responses to
+                  medical diagnoses and their associated challenges.
                 </p>
 
                 <p className="text-lg leading-relaxed text-gray-700">
-                  I believe therapy should meet you where you are. That&apos;s
-                  why I offer 100% virtual sessions you can connect from
-                  wherever you feel most comfortable and safe, whether
-                  that&apos;s your living room, your car, or a quiet spot
-                  outdoors.
+                  I&apos;m a Board Approved Supervisor for LMSW level
+                  professionals seeking full clinical licensure and I offer both
+                  group and individual supervision as well as consultation to
+                  organizations seeking clinical and social work guidance.
                 </p>
               </div>
+              <p className="mt-2 text-sm text-gray-600 font-italic">
+                Licensed in the state of Texas
+              </p>
             </div>
             <Card className="mb-12">
               <h2 className="text-3xl font-semibold text-navy mb-6">
@@ -164,7 +167,7 @@ export default function AboutSection() {
             {/* Take out Credentials and Training // Add a section for
             supervisory role for individuals or groups looking for full
             licensure. */}
-            <Card>
+            {/* <Card>
               <h2 className="text-3xl font-semibold text-navy mb-6">
                 Supervisory Role{" "}
               </h2>
@@ -182,7 +185,7 @@ export default function AboutSection() {
                   <span>Indiviual and Group Supervision</span>
                 </li>
               </ul>
-            </Card>
+            </Card> */}
           </div>
         </div>
       </section>

@@ -71,7 +71,7 @@ export default function HomeSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
-                Welcome Home to Healing
+                Real Conversations. Real Change.
               </motion.h1>
 
               <motion.p
@@ -104,7 +104,15 @@ export default function HomeSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
               >
-                <Button onClick={() => setIsModalOpen(true)}>
+                <Button
+                  onClick={() =>
+                    window.open(
+                      "https://onward-therapy-and-wellness.clientsecure.me/request/clinician",
+                      "_blank",
+                      "noopener,noreferrer"
+                    )
+                  }
+                >
                   Book a Session
                 </Button>
                 <Button variant="primary">Learn About Services</Button>

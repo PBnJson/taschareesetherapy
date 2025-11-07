@@ -268,7 +268,13 @@ export default function ContactSection() {
                   online calendar.
                 </p>
                 <Button
-                  onClick={() => setIsModalOpen(true)}
+                  onClick={() =>
+                    window.open(
+                      "https://onward-therapy-and-wellness.clientsecure.me/request/clinician",
+                      "_blank",
+                      "noopener,noreferrer"
+                    )
+                  }
                   variant="secondary"
                   className="w-full"
                 >

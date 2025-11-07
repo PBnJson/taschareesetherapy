@@ -1,14 +1,17 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
   return (
     <footer className="border-t border-gray-200 mt-auto">
       <div className="container place-items-center py-10 grid gap-8 md:grid-cols-3">
         <div className="place-items-center">
-          <h3 className="font-semibold text-brand-700">Tascha Reese</h3>
-          <p className="mt-3 text-sm text-gray-600">
-            Compassionate therapy available for you.
-          </p>
+          <Image
+            src="/images/tascha_logo.png"
+            alt="Tascha Reese Therapy Logo"
+            width={200}
+            height={180}
+          />
         </div>
         <div>
           <h4 className="font-medium mb-2">Quick Links</h4>

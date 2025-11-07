@@ -46,9 +46,9 @@ export default function RootLayout({
             <Image
               src="/images/tascha_logo.png"
               alt="Tascha Reese Therapy Logo"
-              width={150}
-              height={150}
-              className="w-15 h-15 ml-8"
+              width={250}
+              height={210}
+              className="w-25 h-16 ml-8"
             />
             <DesktopNavWrapper />
             <MobilNavWrapper />
