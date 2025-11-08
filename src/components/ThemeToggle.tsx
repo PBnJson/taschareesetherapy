@@ -101,7 +101,7 @@ export function ThemeToggle() {
         aria-pressed={theme === "accessible"}
       >
         <Image
-          src="/images/low_vision_access.svg"
+          src="/icons/low_vision_access.svg"
           alt="Accessible theme"
           width={50}
           height={50}

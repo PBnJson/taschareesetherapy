@@ -61,7 +61,7 @@ export default function HomeSection() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] flex items-center bg-gradient-to-br from-surface via-accent to-muted">
+      <section className="relative min-h-[91vh] flex items-center bg-gradient-to-br from-surface via-accent to-muted overflow-x-hidden">
         <div className="container relative z-10 mx-auto px-4">
           <div className="grid items-center gap-6 md:grid-cols-2">
             <div className="text-fg/90">
@@ -112,6 +112,7 @@ export default function HomeSection() {
                       "noopener,noreferrer"
                     )
                   }
+                  variant="cta"
                 >
                   Book a Session
                 </Button>
@@ -123,23 +124,37 @@ export default function HomeSection() {
                 transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
               >
                 <p className="mt-2 text-sm text-gray-600 font-italic">
-                  Most insurances accepted
+                  * Most insurances accepted
                 </p>
               </motion.div>
             </div>
 
             <motion.div
-              className="relative mx-auto w-fit"
+              className="relative mx-auto w-fit overflow-visible"
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <div className="overflow-hidden rounded-t-[160px] rounded-b-none border-4 border-fg/10 bg-fg/5 backdrop-blur-sm">
+              {/* Blurred background sofa image */}
+              <div className="absolute left-[145px] -top-29 -z-10 h-[100vh] w-[900px] overflow-hidden opacity-60">
+                <div className="relative h-full w-full">
+                  <Image
+                    src={"/images/blurred_sofa.jpg"}
+                    fill
+                    alt=""
+                    className="object-cover scale-100"
+                    style={{ filter: "blur(12px)" }}
+                  />
+                </div>
+              </div>
+
+              {/* Main portrait image */}
+              <div className="relative overflow-hidden rounded-t-[160px] mt-[150px]">
                 <Image
                   src={"/images/tascha_credentials.jpeg"}
                   priority={true}
-                  width={300}
-                  height={400}
+                  width={320}
+                  height={390}
                   alt="Tascha sitting and smiling with credentials behind her."
                 />
               </div>
@@ -147,7 +162,6 @@ export default function HomeSection() {
           </div>
         </div>
       </section>
-
       {/* Trust Section */}
       <section ref={trustSection.ref} className="bg-bg py-16">
         <div className="container mx-auto px-4">
@@ -271,7 +285,7 @@ export default function HomeSection() {
       {/* Testimonials */}
       <section
         ref={testimonialsSection.ref}
-        className="bg-gradient-to-br from-bg to-surface py-16"
+        className="bg-gradient-to-br from-bg to-surface py-16 h-30vh"
       >
         <motion.div
           className="container mx-auto px-4"
@@ -281,29 +295,59 @@ export default function HomeSection() {
           }
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          <h2 className="mb-12 text-center text-4xl font-bold text-fg font-serif">
+          <h2 className="mb-12 text-center text-5xl font-bold text-fg font-serif tracking-wider">
             What People Are Saying
           </h2>
 
-          <div className="mx-auto grid max-w-5xl gap-8 md:grid-cols-2">
-            <div className="rounded-2xl border-l-4 border-accent bg-surface/50 p-8 shadow-lg">
-              <p className="mb-4 italic text-fg/90 font-serif">
-                &quot;After struggling for years, I finally found someone who
-                gets it. The virtual sessions made it so much easier to open up.
-                I&apos;m sleeping better and my family says I&apos;m more
-                present.&quot;
-              </p>
-              <p className="font-semibold text-fg">-Veteran</p>
+          <div className="relative mx-auto max-w-5xl">
+            {/* Left quotation mark */}
+            <div className="absolute -left-35 bottom-25 hidden text-muted/90 lg:block">
+              <svg
+                className="h-32 w-32"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 320 320"
+              >
+                <path
+                  d="M82.87 129.48S77.32 98.96 114.31 74c-12.95 0-89.7 30.52-89.7 113.74 0 33.09 27.59 59.73 61.01 58.19 29.85-1.37 54.07-25.6 55.44-55.45 1.54-33.41-25.1-61-58.19-61zm154.26 0S231.58 98.96 268.57 74c-12.95 0-89.7 30.52-89.7 113.74 0 33.09 27.58 59.73 61.01 58.19 29.85-1.37 54.07-25.6 55.44-55.45 1.54-33.41-25.1-61-58.19-61z"
+                  fill="currentColor"
+                />
+              </svg>
             </div>
 
-            <div className="rounded-2xl border-l-4 border-muted bg-surface/50 p-8 shadow-lg">
-              <p className="mb-4 italic text-fg/90 font-serif">
-                &quot;I was skeptical about online therapy, but being able to
-                talk from home made all the difference. She helped me work
-                through my PTSD triggers and gave me tools I use every
-                day.&quot;
-              </p>
-              <p className="font-semibold text-fg">-Anonymous</p>
+            {/* Right quotation mark */}
+            <div className="absolute -right-35 top-25 hidden rotate-180 text-muted/90 lg:block">
+              <svg
+                className="h-32 w-32"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 320 320"
+              >
+                <path
+                  d="M82.87 129.48S77.32 98.96 114.31 74c-12.95 0-89.7 30.52-89.7 113.74 0 33.09 27.59 59.73 61.01 58.19 29.85-1.37 54.07-25.6 55.44-55.45 1.54-33.41-25.1-61-58.19-61zm154.26 0S231.58 98.96 268.57 74c-12.95 0-89.7 30.52-89.7 113.74 0 33.09 27.58 59.73 61.01 58.19 29.85-1.37 54.07-25.6 55.44-55.45 1.54-33.41-25.1-61-58.19-61z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+
+            <div className="grid gap-8 md:grid-cols-2">
+              <div className="rounded-2xl border-l-4 border-accent bg-surface/50 p-8 shadow-lg">
+                <p className="mb-4 italic text-fg/90 font-serif">
+                  &quot;After struggling for years, I finally found someone who
+                  gets it. The virtual sessions made it so much easier to open
+                  up. I&apos;m sleeping better and my family says I&apos;m more
+                  present.&quot;
+                </p>
+                <p className="font-semibold text-fg">-Veteran</p>
+              </div>
+
+              <div className="rounded-2xl border-l-4 border-muted bg-surface/50 p-8 shadow-lg">
+                <p className="mb-4 italic text-fg/90 font-serif">
+                  &quot;I was skeptical about online therapy, but being able to
+                  talk from home made all the difference. She helped me work
+                  through my PTSD triggers and gave me tools I use every
+                  day.&quot;
+                </p>
+                <p className="font-semibold text-fg">-Anonymous</p>
+              </div>
             </div>
           </div>
         </motion.div>
