@@ -1,21 +1,56 @@
+"use client";
+
 import Card from "../ui/Card";
 import Image from "next/image";
+import CurvedText from "react-curved-text";
 
 export default function AboutSection() {
   return (
-    <div className="pt-20">
-      <section className="py-16 bg-gradient-to-br from-white to-sage/5">
-        <div className="container mx-auto px-4">
+    <div className="pt-20" aria-label="About Tascha Reese">
+      <section
+        className="py-16 bg-gradient-to-br from-white to-sage/5"
+        aria-label="About Tascha Reese"
+      >
+        <div className="container mx-auto px-4" aria-label="About Tascha Reese">
           <div className="max-w-4xl mx-auto">
-            <h1 className="text-5xl font-bold text-navy mb-8 text-center">
-              About Tascha Reese
+            <h1 className="tracking-wider text-5xl font-bold text-navy mb-8 text-center">
+              Tascha Reese
             </h1>
             <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <div className="md:col-span-1">
+              <div className="md:col-span-1 relative overflow-visible">
+                <div className="z-15 absolute -left-32 -top-32 overflow-visible">
+                  <CurvedText
+                    width={500}
+                    height={500}
+                    cx={290}
+                    cy={260}
+                    rx={195}
+                    ry={180}
+                    startOffset={0}
+                    reversed={true}
+                    text="ABOUT"
+                    textProps={{
+                      style: {
+                        fontSize: "48px",
+                        fontWeight: "semibold",
+                        fill: "#2b2b2b",
+                        opacity: 0.3,
+                        letterSpacing: "8px",
+                        fontFamily: "serif",
+                      },
+                    }}
+                    textPathProps={{}}
+                    tspanProps={{}}
+                    ellipseProps={{}}
+                    svgProps={{
+                      style: { transform: "rotate(9deg)" },
+                    }}
+                  />
+                </div>
                 <Image
                   src="/images/tascha_black_bg.jpeg"
                   alt="Tascha Reese Therapy"
-                  className="rounded-2xl shadow-xl w-full h-full object-cover"
+                  className="rounded-b-2xl rounded-t-[160px] shadow-xl w-full h-full object-cover"
                   width={300}
                   height={450}
                 />
