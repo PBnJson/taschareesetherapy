@@ -2,6 +2,7 @@
 
 import Card from "../ui/Card";
 import Button from "../ui/Button";
+import Image from "next/image";
 
 export default function ServicesSection() {
   const services = [
@@ -101,17 +102,34 @@ export default function ServicesSection() {
     <div className="pt-20">
       <section className="py-16 bg-gradient-to-br from-white via-sage/5 to-lavender/5">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center mb-16">
-            <h1 className="text-5xl font-bold text-navy mb-6">
-              Virtual Therapy Services
-            </h1>
-            <p className="text-xl text-gray-700 leading-relaxed">
-              Specialized mental health support designed specifically for
-              individuals and their families who want or need the privacy of a
-              home-based therapy setting. All sessions are conducted via secure
-              video conferencing unless otherwise discussed, allowing you to
-              receive care from the comfort and privacy of your own space.
-            </p>
+          <div className="max-w-6xl mx-auto mb-16">
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              <div className="text-center md:text-left">
+                <h1 className="text-5xl font-bold text-navy mb-6">
+                  Virtual Therapy Services
+                </h1>
+                <p className="text-xl text-gray-700 leading-relaxed">
+                  Specialized mental health support designed specifically for
+                  individuals and their families who want or need the privacy of
+                  a home-based therapy setting. All sessions are conducted via
+                  secure video conferencing unless otherwise discussed, allowing
+                  you to receive care from the comfort and privacy of your own
+                  space.
+                </p>
+              </div>
+
+              <div className="flex justify-center md:justify-end">
+                <div className="w-[300px] md:w-[350px]">
+                  <Image
+                    src="/images/woman_on_laptop.jpg"
+                    alt="Virtual therapy session on laptop"
+                    className="rounded-t-[160px] shadow-xl w-full h-auto object-cover"
+                    width={350}
+                    height={500}
+                  />
+                </div>
+              </div>
+            </div>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
