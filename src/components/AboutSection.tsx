@@ -17,8 +17,9 @@ export default function AboutSection() {
               Tascha Reese
             </h1>
             <div className="grid md:grid-cols-3 gap-8 mb-12">
-              <div className="md:col-span-1 relative overflow-visible">
-                <div className="z-15 absolute -left-32 -top-32 overflow-visible">
+              <div className="md:col-span-1 relative overflow-visible flex justify-center md:justify-start">
+                {/* Curved ABOUT text - desktop only */}
+                <div className="hidden md:block z-15 absolute -left-32 -top-32 overflow-visible">
                   <CurvedText
                     width={500}
                     height={500}
@@ -47,13 +48,30 @@ export default function AboutSection() {
                     }}
                   />
                 </div>
-                <Image
-                  src="/images/tascha_black_bg.jpeg"
-                  alt="Tascha Reese Therapy"
-                  className="rounded-b-2xl rounded-t-[160px] shadow-xl w-full h-full object-cover"
-                  width={300}
-                  height={450}
-                />
+
+                {/* Vertical ABOUT text - mobile only */}
+                <div className="md:hidden absolute left-[-40] top-[calc(40%+8px)] -translate-y-1/2">
+                  <h2
+                    className="text-3xl font-semibold tracking-[0.3em] -rotate-90 origin-center whitespace-nowrap"
+                    style={{
+                      color: "#2b2b2b",
+                      opacity: 0.3,
+                      fontFamily: "serif",
+                    }}
+                  >
+                    ABOUT
+                  </h2>
+                </div>
+
+                <div className="w-[240px] md:w-[300px] ml-16 md:ml-0">
+                  <Image
+                    src="/images/tascha_black_bg.jpeg"
+                    alt="Tascha Reese Therapy"
+                    className="rounded-t-[120px] md:rounded-t-[160px] shadow-xl w-full h-[300px] md:h-[400px] object-cover"
+                    width={300}
+                    height={800}
+                  />
+                </div>
               </div>
 
               <div className="md:col-span-2 space-y-6">

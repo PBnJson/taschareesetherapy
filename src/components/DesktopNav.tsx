@@ -33,7 +33,16 @@ export function DesktopNav() {
           {link.label}
         </a>
       ))}
-      <Button className="z-50 px-4 py-2 ml-2 cursor-pointer rounded-lg border-2 border-fg bg-accent text-fg font-semibold hover:bg-accent/80 transition-colors">
+      <Button
+        onClick={() =>
+          window.open(
+            "https://onwardtherapyandwellness.com/tascha/",
+            "_blank",
+            "noopener,noreferrer"
+          )
+        }
+        className="z-50 px-4 py-2 ml-2 cursor-pointer rounded-lg border-2 border-fg bg-accent text-fg font-semibold hover:bg-accent/80 transition-colors"
+      >
         Book Now
       </Button>
     </nav>

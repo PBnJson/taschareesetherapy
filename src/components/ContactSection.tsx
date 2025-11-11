@@ -270,7 +270,7 @@ export default function ContactSection() {
                 <Button
                   onClick={() =>
                     window.open(
-                      "https://onward-therapy-and-wellness.clientsecure.me/request/clinician",
+                      "https://onwardtherapyandwellness.com/tascha/",
                       "_blank",
                       "noopener,noreferrer"
                     )

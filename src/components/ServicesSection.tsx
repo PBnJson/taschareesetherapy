@@ -208,7 +208,7 @@ export default function ServicesSection() {
               className="text-lg px-8 py-4"
               onClick={() =>
                 window.open(
-                  "https://onward-therapy-and-wellness.clientsecure.me/request/clinician",
+                  "https://onwardtherapyandwellness.com/tascha/",
                   "_blank",
                   "noopener,noreferrer"
                 )
