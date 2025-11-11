@@ -202,7 +202,7 @@ export default function ContactSection() {
                         href="mailto:contact@healingpathstherapy.com"
                         className="text-gray-600 hover:text-navy transition-colors"
                       >
-                        contact@healingpathstherapy.com
+                        treese@therapysecure.com
                       </a>
                     </div>
                   </div>
@@ -229,7 +229,7 @@ export default function ContactSection() {
                         href="tel:+15551234567"
                         className="text-gray-600 hover:text-navy transition-colors"
                       >
-                        (555) 123-4567
+                        (903) 372-6883
                       </a>
                     </div>
                   </div>
@@ -253,9 +253,9 @@ export default function ContactSection() {
                     <div>
                       <p className="font-medium text-navy">Hours</p>
                       <p className="text-gray-600">
-                        Monday - Friday: 9am - 7pm
+                        Monday - Friday: 9am - 6pm
                       </p>
-                      <p className="text-gray-600">Saturday: 10am - 4pm</p>
+                      <p className="text-gray-600">Weekends: by appointment</p>
                     </div>
                   </div>
                 </div>
@@ -308,17 +308,6 @@ export default function ContactSection() {
           </div>
         </div>
       </section>
-
-      {/* Calendly Modal */}
-      <Modal
-        isOpen={isModalOpen}
-        onClose={() => setIsModalOpen(false)}
-        title="Schedule Your Session"
-      >
-        <div className="h-[600px]">
-          <InlineWidget url="https://calendly.com/your-calendly-url" />
-        </div>
-      </Modal>
     </div>
   );
 }
