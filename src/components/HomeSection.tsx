@@ -135,8 +135,8 @@ export default function HomeSection() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              {/* Blurred background sofa image */}
-              <div className="absolute left-[145px] -top-29 -z-10 h-[100vh] w-[900px] overflow-hidden opacity-60">
+              {/* Blurred background sofa image - hidden on mobile */}
+              <div className="hidden md:block absolute left-[145px] -top-29 -z-10 h-[100vh] w-[900px] overflow-hidden opacity-60">
                 <div className="relative h-full w-full">
                   <Image
                     src={"/images/blurred_sofa.jpg"}
@@ -149,7 +149,7 @@ export default function HomeSection() {
               </div>
 
               {/* Main portrait image */}
-              <div className="relative overflow-hidden rounded-t-[160px] mt-[150px]">
+              <div className="relative overflow-hidden rounded-t-[160px] mt-0 md:mt-[150px]">
                 <Image
                   src={"/images/tascha_credentials.jpeg"}
                   priority={true}

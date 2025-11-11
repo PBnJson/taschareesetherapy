@@ -13,20 +13,20 @@ declare module "react-curved-text" {
     text: string;
     textProps?: {
       style?: CSSProperties;
-      [key: string]: any;
+      [key: string]: unknown;
     };
     textPathProps?: {
-      [key: string]: any;
+      [key: string]: unknown;
     };
     tspanProps?: {
-      [key: string]: any;
+      [key: string]: unknown;
     };
     ellipseProps?: {
-      [key: string]: any;
+      [key: string]: unknown;
     };
     svgProps?: {
       style?: CSSProperties;
-      [key: string]: any;
+      [key: string]: unknown;
     };
   }
 
