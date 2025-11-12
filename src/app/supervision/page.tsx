@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+import Link from "next/link";
 import Button from "../../ui/Button";
 import Card from "../../ui/Card";
 
@@ -120,12 +121,12 @@ export default function SupervisionPage() {
                   development service from therapy and counseling. If
                   you&apos;re looking for mental health therapy services, please
                   visit the{" "}
-                  <a
+                  <Link
                     href="/"
                     className="text-navy underline hover:text-navy/80"
                   >
                     main page
-                  </a>
+                  </Link>
                   .
                 </p>
               </div>
@@ -379,9 +380,12 @@ export default function SupervisionPage() {
               </p>
               <p className="text-sm text-fg/80">
                 For therapy services, please visit the{" "}
-                <a href="/" className="text-navy underline hover:text-navy/80">
+                <Link
+                  href="/"
+                  className="text-navy underline hover:text-navy/80"
+                >
                   main page
-                </a>
+                </Link>
                 .
               </p>
             </div>
