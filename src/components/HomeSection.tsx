@@ -113,10 +113,16 @@ export default function HomeSection() {
                     )
                   }
                   variant="cta"
+                  className="border-1 border-fg bg-transparent text-fg hover:bg-fg/10"
                 >
                   Book a Session
                 </Button>
-                <Button variant="primary">Learn About Services</Button>
+                <Button
+                  variant="primary"
+                  className="border-1 border-fg bg-transparent text-fg hover:bg-white/10"
+                >
+                  15 min Consultation
+                </Button>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0 }}

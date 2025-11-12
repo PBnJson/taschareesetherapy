@@ -27,6 +27,12 @@
   --color-accent: #ffb16e;
   --color-muted: #cca25a;
   --color-fg: #2b2b2b;
+  /* TEST COLORS  */
+  /* --color-bg: #f9f9f9;
+  --color-surface: #ece7d8;
+  --color-accent: #ffe84;
+  --color-muted: #e4cea8;
+  --color-fg: #2b2b2b; */
 }
 
 :root[data-theme="accessible"] {
