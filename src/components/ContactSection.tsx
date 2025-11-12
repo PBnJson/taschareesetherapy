@@ -150,7 +150,7 @@ export default function ContactSection() {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full"
+                  className="w-full border-1 border-fg bg-transparent text-fg hover:bg-accent/10"
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
@@ -196,7 +196,7 @@ export default function ContactSection() {
                     <div>
                       <p className="font-medium text-navy">Email</p>
                       <a
-                        href="mailto:contact@healingpathstherapy.com"
+                        href="mailto:treese@therapysecure.com"
                         className="text-gray-600 hover:text-navy transition-colors"
                       >
                         treese@therapysecure.com
