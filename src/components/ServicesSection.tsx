@@ -32,7 +32,7 @@ export default function ServicesSection() {
           d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
         />
       ),
-      color: "sage",
+      color: "fg",
     },
     {
       title: "Transition Support",
@@ -74,7 +74,7 @@ export default function ServicesSection() {
           d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
         />
       ),
-      color: "sage",
+      color: "fg",
     },
     {
       title: "Sleep & Nightmares",
@@ -94,13 +94,13 @@ export default function ServicesSection() {
 
   const colorMap = {
     navy: "bg-navy/10 text-navy",
-    sage: "bg-sage/20 text-sage",
+    fg: "bg-fg/20 text-fg",
     lavender: "bg-lavender/20 text-accent",
   };
 
   return (
     <div className="pt-20">
-      <section className="py-16 bg-gradient-to-br from-white via-sage/5 to-lavender/5">
+      <section className="py-16 bg-gradient-to-br from-bg via-fg/5 to-surface/5">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto mb-16">
             <div className="grid md:grid-cols-2 gap-8 items-center">
@@ -108,7 +108,7 @@ export default function ServicesSection() {
                 <h1 className="text-5xl font-bold text-navy mb-6">
                   Virtual Therapy Services
                 </h1>
-                <p className="text-xl text-gray-700 leading-relaxed">
+                <p className="text-xl text-fg/80 leading-relaxed">
                   Specialized mental health support designed specifically for
                   individuals and their families who want or need the privacy of
                   a home-based therapy setting. All sessions are conducted via
@@ -119,7 +119,7 @@ export default function ServicesSection() {
               </div>
 
               <div className="flex justify-center md:justify-end">
-                <div className="w-[300px] md:w-[350px]">
+                <div className="w-[350px] md:w-[400px]">
                   <Image
                     src="/images/woman_on_laptop.jpg"
                     alt="Virtual therapy session on laptop"
@@ -153,11 +153,102 @@ export default function ServicesSection() {
                 <h3 className="text-2xl font-semibold text-navy mb-3">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">
+                <p className="text-fg/80 leading-relaxed">
                   {service.description}
                 </p>
               </Card>
             ))}
+          </div>
+
+          {/* Supervisory Services Section */}
+          <div className="max-w-5xl mx-auto mb-16">
+            <Card className="bg-gradient-to-br from-white/5 to-fg/15 border-2 border-surface/20">
+              <div className="text-center mb-8">
+                <div className="inline-block bg-fg/10 px-6 py-2 rounded-full mb-4">
+                  <span className="text-sm font-semibold text-navy uppercase tracking-wider">
+                    Professional Development
+                  </span>
+                </div>
+                <h2 className="text-4xl font-bold text-navy mb-4">
+                  Clinical Supervision for LMSWs
+                </h2>
+                <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+                  Board Approved Supervisor for Licensed Master Social Workers
+                  seeking full clinical licensure
+                </p>
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-8">
+                <div className="bg-white/70 rounded-lg p-6 shadow-sm">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-navy/10 rounded-full flex items-center justify-center mr-4">
+                      <svg
+                        className="w-6 h-6 text-navy"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+                        />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-semibold text-navy">
+                      Individual Supervision
+                    </h3>
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">
+                    One-on-one - tailored to your specific clinical development
+                    needs, case consultations, and professional growth toward
+                    full licensure.
+                  </p>
+                </div>
+
+                <div className="bg-white/70 rounded-lg p-6 shadow-sm">
+                  <div className="flex items-center mb-4">
+                    <div className="w-12 h-12 bg-fg/20 rounded-full flex items-center justify-center mr-4">
+                      <svg
+                        className="w-6 h-6 text-fg"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                        />
+                      </svg>
+                    </div>
+                    <h3 className="text-2xl font-semibold text-navy">
+                      Group Supervision
+                    </h3>
+                  </div>
+                  <p className="text-fg/80 leading-relaxed">
+                    Group environment with peer support, shared experiences, and
+                    diverse perspectives to enhance your clinical skills.
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-8 text-center">
+                <Button
+                  className="text-lg px-8 py-4 border-1 border-fg bg-transparent text-fg hover:bg-fg/10"
+                  onClick={() => (window.location.href = "/supervision")}
+                  variant="primary"
+                >
+                  Inquire About Supervision
+                </Button>
+                <p className="mt-4 text-sm text-fg/50">
+                  Board Approved Supervisor • 30+ Years Experience • Licensed in
+                  Texas
+                </p>
+              </div>
+            </Card>
           </div>
 
           <Card className="max-w-4xl mx-auto bg-surface/90-to-bg-surface/50 text-fg/90">
@@ -168,26 +259,26 @@ export default function ServicesSection() {
                 </h2>
                 <ul className="space-y-3">
                   <li className="flex items-start">
-                    <span className="text-sage mr-3 mt-1 font-bold">1.</span>
+                    <span className="text-fg mr-3 mt-1 font-bold">1.</span>
                     <span>
                       Schedule your session through our secure online booking
                       system
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-sage mr-3 mt-1 font-bold">2.</span>
+                    <span className="text-fg mr-3 mt-1 font-bold">2.</span>
                     <span>
                       Receive a confidential video link before your appointment
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-sage mr-3 mt-1 font-bold">3.</span>
+                    <span className="text-fg mr-3 mt-1 font-bold">3.</span>
                     <span>
                       Connect from any private location with internet access
                     </span>
                   </li>
                   <li className="flex items-start">
-                    <span className="text-sage mr-3 mt-1 font-bold">4.</span>
+                    <span className="text-fg mr-3 mt-1 font-bold">4.</span>
                     <span>
                       Engage in therapy just like an in-person session
                     </span>

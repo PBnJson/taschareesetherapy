@@ -4,8 +4,6 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Button from "../ui/Button";
 import Card from "../ui/Card";
-import Modal from "../ui/Modal";
-import { InlineWidget } from "react-calendly";
 
 export default function ContactSection() {
   const [formData, setFormData] = useState({
@@ -259,27 +257,6 @@ export default function ContactSection() {
                     </div>
                   </div>
                 </div>
-              </Card>
-
-              <Card className="bg-gradient-to-br from-navy to-primary text-white">
-                <h2 className="text-2xl font-semibold mb-4">Book Directly</h2>
-                <p className="mb-6 text-white/90">
-                  Schedule your free consultation or first session using our
-                  online calendar.
-                </p>
-                <Button
-                  onClick={() =>
-                    window.open(
-                      "https://onwardtherapyandwellness.com/tascha/",
-                      "_blank",
-                      "noopener,noreferrer"
-                    )
-                  }
-                  variant="secondary"
-                  className="w-full"
-                >
-                  View Available Times
-                </Button>
               </Card>
 
               <Card>

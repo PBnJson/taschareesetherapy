@@ -123,7 +123,7 @@ export default function HomeSection() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
               >
-                <p className="mt-2 text-sm text-gray-600 font-italic">
+                <p className="mt-2 text-sm text-fg/80 font-italic">
                   * Most insurances accepted
                 </p>
               </motion.div>
@@ -256,7 +256,7 @@ export default function HomeSection() {
                 ease: "easeOut",
               }}
             >
-              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border-2 border-black/25 bg-accent/25 p-2">
+              <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full border-2 border-fg/25 bg-accent/25 p-2">
                 <svg
                   className="h-8 w-8 text-red-500/50"
                   fill="none"
