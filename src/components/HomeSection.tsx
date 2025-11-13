@@ -11,6 +11,7 @@ function useIntersectionObserver(threshold = 0.5) {
   const ref = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    const element = ref.current; // Capture the current value
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -22,13 +23,13 @@ function useIntersectionObserver(threshold = 0.5) {
       { threshold }
     );
 
-    if (ref.current) {
-      observer.observe(ref.current);
+    if (element) {
+      observer.observe(element);
     }
 
     return () => {
-      if (ref.current) {
-        observer.unobserve(ref.current);
+      if (element) {
+        observer.unobserve(element);
       }
     };
   }, [threshold]);
@@ -37,7 +38,7 @@ function useIntersectionObserver(threshold = 0.5) {
 }
 
 export default function HomeSection() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  // const [isModalOpen, setIsModalOpen] = useState(false);
   const [isDesktop, setIsDesktop] = useState(false);
 
   // Use the custom hook for each section
