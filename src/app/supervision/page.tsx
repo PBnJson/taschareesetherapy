@@ -76,12 +76,12 @@ export default function SupervisionPage() {
         <div className="container mx-auto px-4">
           {/* Header Section */}
           <div className="max-w-4xl mx-auto text-center mb-12">
-            <div className="inline-block bg-navy/10 px-6 py-2 rounded-full mb-4">
-              <span className="text-sm font-semibold text-navy uppercase tracking-wider">
+            <div className="inline-block bg-fg/25 px-6 py-2 rounded-full mb-4">
+              <span className="text-sm font-semibold text-fg uppercase tracking-wider">
                 Professional Development
               </span>
             </div>
-            <h1 className="text-5xl font-bold text-navy mb-6">
+            <h1 className="text-5xl font-bold text-fg mb-6">
               Clinical Supervision for LMSWs
             </h1>
             <p className="text-xl text-fg/80 leading-relaxed">
@@ -94,7 +94,7 @@ export default function SupervisionPage() {
 
           {/* Stylized Inspirational Text */}
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <p className="text-3xl md:text-4xl font-serif italic text-navy/80 leading-relaxed">
+            <p className="text-4xl md:text-5xl font-serif italic text-fg/80 leading-relaxed tracking-wider">
               &ldquo;Time to invest in your professional future.&rdquo;
             </p>
           </div>
@@ -143,7 +143,7 @@ export default function SupervisionPage() {
           {/* Supervision Services Info */}
           <div className="max-w-5xl mx-auto mb-12">
             <div className="grid md:grid-cols-2 gap-8">
-              <Card className="bg-white/70">
+              <Card className="bg-bg/60">
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-navy/10 rounded-full flex items-center justify-center mr-4">
                     <svg
@@ -185,7 +185,7 @@ export default function SupervisionPage() {
                 </ul>
               </Card>
 
-              <Card className="bg-white/70">
+              <Card className="bg-bg/60">
                 <div className="flex items-center mb-4">
                   <div className="w-12 h-12 bg-fg/20 rounded-full flex items-center justify-center mr-4">
                     <svg
