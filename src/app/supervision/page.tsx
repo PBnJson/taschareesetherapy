@@ -92,6 +92,13 @@ export default function SupervisionPage() {
             </p>
           </div>
 
+          {/* Stylized Inspirational Text */}
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <p className="text-3xl md:text-4xl font-serif italic text-navy/80 leading-relaxed">
+              &ldquo;Time to invest in your professional future.&rdquo;
+            </p>
+          </div>
+
           {/* Why This Page Exists */}
           <Card className="max-w-4xl mx-auto mb-12 bg-gradient-to-br from-surface/50 to-accent/10">
             <div className="flex items-start space-x-4">

@@ -76,81 +76,147 @@ export default function ContactSection() {
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
+                {/* Name */}
+                <div className="space-y-1">
                   <label
                     htmlFor="name"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-fg"
                   >
-                    Name *
+                    Name <span className="text-red-500">*</span>
                   </label>
                   <input
-                    type="text"
                     id="name"
                     name="name"
-                    value={formData.name}
-                    onChange={handleChange}
+                    type="text"
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy focus:border-transparent transition-all"
+                    className="w-full rounded-md border border-fg/30 bg-background px-3 py-2 text-sm text-fg focus:outline-none focus:ring-2 focus:ring-accent"
+                    placeholder="Your name"
                   />
                 </div>
 
-                <div>
+                {/* Email */}
+                <div className="space-y-1">
                   <label
                     htmlFor="email"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-fg"
                   >
-                    Email *
+                    Email <span className="text-red-500">*</span>
                   </label>
                   <input
-                    type="email"
                     id="email"
                     name="email"
-                    value={formData.email}
-                    onChange={handleChange}
+                    type="email"
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy focus:border-transparent transition-all"
+                    className="w-full rounded-md border border-fg/30 bg-background px-3 py-2 text-sm text-fg focus:outline-none focus:ring-2 focus:ring-accent"
+                    placeholder="you@example.com"
                   />
                 </div>
 
-                <div>
+                {/* Phone (optional) */}
+                <div className="space-y-1">
                   <label
                     htmlFor="phone"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-fg"
                   >
                     Phone (optional)
                   </label>
                   <input
-                    type="tel"
                     id="phone"
                     name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy focus:border-transparent transition-all"
+                    type="tel"
+                    className="w-full rounded-md border border-fg/30 bg-background px-3 py-2 text-sm text-fg focus:outline-none focus:ring-2 focus:ring-accent"
+                    placeholder="(xxx) xxx-xxxx"
                   />
                 </div>
 
-                <div>
+                {/* Reason for contacting (dropdown) */}
+                <div className="space-y-1">
+                  <label
+                    htmlFor="reason"
+                    className="block text-sm font-medium text-fg"
+                  >
+                    Reason for contacting{" "}
+                    <span className="text-red-500">*</span>
+                  </label>
+                  <select
+                    id="reason"
+                    name="reason"
+                    required
+                    className="w-full rounded-md border border-fg/30 bg-background px-3 py-2 text-sm text-fg focus:outline-none focus:ring-2 focus:ring-accent"
+                    defaultValue=""
+                  >
+                    <option value="" disabled>
+                      Please choose one
+                    </option>
+                    <option value="consult">Schedule a consultation</option>
+                    <option value="general">General question</option>
+                    <option value="speaking">
+                      Speaking engagement / workshop
+                    </option>
+                    <option value="collaboration">
+                      Referral / collaboration
+                    </option>
+                    <option value="other">Other non-urgent request</option>
+                  </select>
+                </div>
+
+                {/* How did you hear about me? (dropdown) */}
+                <div className="space-y-1">
+                  <label
+                    htmlFor="referralSource"
+                    className="block text-sm font-medium text-fg"
+                  >
+                    How did you hear about me?
+                  </label>
+                  <select
+                    id="referralSource"
+                    name="referralSource"
+                    className="w-full rounded-md border border-fg/30 bg-background px-3 py-2 text-sm text-fg focus:outline-none focus:ring-2 focus:ring-accent"
+                    defaultValue=""
+                  >
+                    <option value="" disabled>
+                      Please choose one (optional)
+                    </option>
+                    <option value="google">Google / online search</option>
+                    <option value="friend">Friend or family</option>
+                    <option value="provider">Another provider</option>
+                    <option value="social">Social media</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+
+                {/* Short message with no-PHI warning */}
+                <div className="space-y-1">
                   <label
                     htmlFor="message"
-                    className="block text-sm font-medium text-gray-700 mb-2"
+                    className="block text-sm font-medium text-fg"
                   >
-                    Message *
+                    Brief notes (optional)
                   </label>
                   <textarea
                     id="message"
                     name="message"
-                    value={formData.message}
-                    onChange={handleChange}
-                    required
-                    rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-navy focus:border-transparent transition-all resize-none"
+                    rows={3}
+                    className="w-full rounded-md border border-fg/30 bg-background px-3 py-2 text-sm text-fg focus:outline-none focus:ring-2 focus:ring-accent"
+                    placeholder="You can share general details about your request, but please do not include personal health information."
                   />
+                  <p className="text-xs text-muted-foreground">
+                    Please do <span className="font-semibold">not</span> include
+                    personal health or medical information in this form. This
+                    form is for general inquiries only and is not monitored
+                    continuously. If you are in crisis, thinking about harming
+                    yourself or others, or in an emergency, do not use this
+                    form—call 911, dial{" "}
+                    <span className="font-semibold">988</span> for the Suicide
+                    &amp; Crisis Lifeline, or go to the nearest emergency room.
+                  </p>
                 </div>
 
+                {/* Submit button + status messages (your existing code) */}
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full border-1 border-fg bg-transparent text-fg hover:bg-accent/10"
+                  className="w-full border border-fg bg-transparent text-fg hover:bg-accent/10"
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>
