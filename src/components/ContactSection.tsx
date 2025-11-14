@@ -18,41 +18,102 @@ export default function ContactSection() {
     "idle" | "success" | "error"
   >("idle");
 
-  // const handleChange = (
-  //   e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  // ) => {
-  //   setFormData({
-  //     ...formData,
-  //     [e.target.name]: e.target.value,
-  //   });
-  // };
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
+    // Debug: Log environment variable status
+    console.log("🔍 EmailJS Configuration Check:");
+    console.log(
+      "Service ID:",
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+        ? "✅ Configured"
+        : "❌ Missing"
+    );
+    console.log(
+      "Template ID (Contact):",
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_CONTACT
+        ? "✅ Configured"
+        : "❌ Missing"
+    );
+    console.log(
+      "Public Key:",
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        ? "✅ Configured"
+        : "❌ Missing"
+    );
+
+    // Check if environment variables are configured
+    if (
+      !process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ||
+      !process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_CONTACT ||
+      !process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+    ) {
+      console.error(
+        "❌ EmailJS Error: Missing environment variables in .env.local"
+      );
+      console.error(
+        "📝 Please add NEXT_PUBLIC_EMAILJS_TEMPLATE_CONTACT to your .env.local file"
+      );
+      setSubmitStatus("error");
+      setIsSubmitting(false);
+      return;
+    }
+
+    console.log(
+      "✅ All EmailJS variables configured. Attempting to send email..."
+    );
+
     try {
-      // Replace with your EmailJS credentials
-      await emailjs.send(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          phone: formData.phone,
-          message: formData.message,
-        },
-        "YOUR_PUBLIC_KEY"
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone || "Not provided",
+        reason: (e.target as HTMLFormElement).reason.value,
+        referral_source:
+          (e.target as HTMLFormElement).referralSource.value || "Not provided",
+        message: formData.message || "No message provided",
+      };
+
+      console.log("📧 Sending email with params:", templateParams);
+      console.log(
+        "📋 Using Contact Template ID:",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_CONTACT
       );
 
+      const response = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_CONTACT,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      );
+
+      console.log("✅ Email sent successfully!", response);
       setSubmitStatus("success");
       setFormData({ name: "", email: "", phone: "", message: "" });
+      // Reset the form
+      (e.target as HTMLFormElement).reset();
     } catch (error) {
-      console.error("Email error:", error);
+      console.error("❌ Email sending failed:", error);
+      if (error instanceof Error) {
+        console.error("Error message:", error.message);
+      }
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
+      console.log("🏁 Form submission complete");
     }
   };
 
@@ -89,6 +150,8 @@ export default function ContactSection() {
                     name="name"
                     type="text"
                     required
+                    value={formData.name}
+                    onChange={handleChange}
                     className="w-full rounded-md border border-fg/30 bg-background px-3 py-2 text-sm text-fg focus:outline-none focus:ring-2 focus:ring-accent"
                     placeholder="Your name"
                   />
@@ -107,6 +170,8 @@ export default function ContactSection() {
                     name="email"
                     type="email"
                     required
+                    value={formData.email}
+                    onChange={handleChange}
                     className="w-full rounded-md border border-fg/30 bg-background px-3 py-2 text-sm text-fg focus:outline-none focus:ring-2 focus:ring-accent"
                     placeholder="you@example.com"
                   />
@@ -124,6 +189,8 @@ export default function ContactSection() {
                     id="phone"
                     name="phone"
                     type="tel"
+                    value={formData.phone}
+                    onChange={handleChange}
                     className="w-full rounded-md border border-fg/30 bg-background px-3 py-2 text-sm text-fg focus:outline-none focus:ring-2 focus:ring-accent"
                     placeholder="(xxx) xxx-xxxx"
                   />
@@ -197,6 +264,8 @@ export default function ContactSection() {
                     id="message"
                     name="message"
                     rows={3}
+                    value={formData.message}
+                    onChange={handleChange}
                     className="w-full rounded-md border border-fg/30 bg-background px-3 py-2 text-sm text-fg focus:outline-none focus:ring-2 focus:ring-accent"
                     placeholder="You can share general details about your request, but please do not include personal health information."
                   />

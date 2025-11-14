@@ -1,6 +1,7 @@
 // src/app/layout.tsx
 import type { Metadata } from "next";
 import { Lato, Playfair_Display } from "next/font/google";
+import Script from "next/script";
 import { DesktopNavWrapper } from "@/components/DesktopNavWrapper";
 import { MobilNavWrapper } from "@/components/MobilNavWrapper"; // keeping your file name
 import { Footer } from "@/components/Footer";
@@ -40,6 +41,12 @@ export default function RootLayout({
       data-theme="quiet"
       className={`${lato.variable} ${playfair.variable}`}
     >
+      <head>
+        <link
+          href="https://assets.calendly.com/assets/external/widget.css"
+          rel="stylesheet"
+        />
+      </head>
       <body className="font-sans flex min-h-screen flex-col">
         <header className="sticky top-0 z-50 border-b border-muted/40 bg-white/80 backdrop-blur">
           <div className="container flex h-16 items-center justify-between">
@@ -60,6 +67,12 @@ export default function RootLayout({
 
         {/* Temporary: client review toggle (remove after decision) */}
         <ThemeToggle />
+
+        {/* Calendly widget script */}
+        <Script
+          src="https://assets.calendly.com/assets/external/widget.js"
+          strategy="lazyOnload"
+        />
       </body>
     </html>
   );

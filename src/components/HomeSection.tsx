@@ -5,6 +5,15 @@ import Button from "../ui/Button";
 import Image from "next/image";
 import { motion } from "motion/react";
 
+// Declare Calendly type for TypeScript
+declare global {
+  interface Window {
+    Calendly?: {
+      initPopupWidget: (options: { url: string }) => void;
+    };
+  }
+}
+
 // Custom hook for intersection observation
 function useIntersectionObserver(threshold = 0.5) {
   const [isVisible, setIsVisible] = useState(false);
@@ -58,6 +67,14 @@ export default function HomeSection() {
       window.removeEventListener("resize", checkScreenSize);
     };
   }, []);
+
+  const openCalendly = () => {
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: "https://calendly.com/taschareese-taschareesetherapy",
+      });
+    }
+  };
 
   return (
     <div>
@@ -119,6 +136,7 @@ export default function HomeSection() {
                   Book a Session
                 </Button>
                 <Button
+                  onClick={openCalendly}
                   variant="primary"
                   className="border-1 border-fg bg-transparent text-fg hover:bg-white/10"
                 >

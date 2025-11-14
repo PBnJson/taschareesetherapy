@@ -6,6 +6,15 @@ import Link from "next/link";
 import Button from "../../ui/Button";
 import Card from "../../ui/Card";
 
+// Declare Calendly type for TypeScript
+declare global {
+  interface Window {
+    Calendly?: {
+      initPopupWidget: (options: { url: string }) => void;
+    };
+  }
+}
+
 export default function SupervisionPage() {
   const [formData, setFormData] = useState({
     name: "",
@@ -37,22 +46,72 @@ export default function SupervisionPage() {
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
+    // Debug: Log environment variable status
+    console.log("🔍 EmailJS Configuration Check (Supervision):");
+    console.log(
+      "Service ID:",
+      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
+        ? "✅ Configured"
+        : "❌ Missing"
+    );
+    console.log(
+      "Template ID (Supervision):",
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_SUPERVISION
+        ? "✅ Configured"
+        : "❌ Missing"
+    );
+    console.log(
+      "Public Key:",
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+        ? "✅ Configured"
+        : "❌ Missing"
+    );
+
+    // Check if environment variables are configured
+    if (
+      !process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ||
+      !process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_SUPERVISION ||
+      !process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+    ) {
+      console.error(
+        "❌ EmailJS Error: Missing environment variables in .env.local"
+      );
+      console.error(
+        "📝 Please add NEXT_PUBLIC_EMAILJS_TEMPLATE_SUPERVISION to your .env.local file"
+      );
+      setSubmitStatus("error");
+      setIsSubmitting(false);
+      return;
+    }
+
+    console.log(
+      "✅ All EmailJS variables configured. Attempting to send email..."
+    );
+
     try {
-      // Replace with your EmailJS credentials
-      await emailjs.send(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
-        {
-          from_name: formData.name,
-          from_email: formData.email,
-          phone: formData.phone,
-          licensure_status: formData.licensureStatus,
-          supervision_type: formData.supervisionType,
-          message: formData.message,
-        },
-        "YOUR_PUBLIC_KEY"
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        phone: formData.phone,
+        licensure_status: formData.licensureStatus,
+        supervision_type: formData.supervisionType,
+        message: formData.message,
+      };
+
+      console.log("📧 Sending supervision email with params:", templateParams);
+      console.log(
+        "📋 Using Supervision Template ID:",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_SUPERVISION
       );
 
+      const response = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_SUPERVISION,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      );
+
+      console.log("✅ Email sent successfully!", response);
       setSubmitStatus("success");
       setFormData({
         name: "",
@@ -63,10 +122,22 @@ export default function SupervisionPage() {
         message: "",
       });
     } catch (error) {
-      console.error("Email error:", error);
+      console.error("❌ Email sending failed:", error);
+      if (error instanceof Error) {
+        console.error("Error message:", error.message);
+      }
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
+      console.log("🏁 Form submission complete");
+    }
+  };
+
+  const openCalendly = () => {
+    if (window.Calendly) {
+      window.Calendly.initPopupWidget({
+        url: "https://calendly.com/taschareese-taschareesetherapy",
+      });
     }
   };
 
@@ -235,10 +306,33 @@ export default function SupervisionPage() {
               <h2 className="text-3xl font-semibold text-navy mb-6 text-center">
                 Inquire About Supervision
               </h2>
-              <p className="text-center text-fg/80 mb-8">
+              <p className="text-center text-fg/80 mb-4">
                 Fill out the form below and I&apos;ll get back to you within 1-2
                 business days to discuss your supervision needs.
               </p>
+              <div className="text-center mb-8">
+                <p className="text-fg/80 mb-4">
+                  Or schedule a consultation directly:
+                </p>
+                <Button
+                  onClick={openCalendly}
+                  variant="primary"
+                  className="border-1 border-navy bg-transparent text-navy hover:bg-navy/10"
+                >
+                  Schedule Consultation
+                </Button>
+              </div>
+
+              <div className="relative mb-8">
+                <div className="absolute inset-0 flex items-center">
+                  <div className="w-full border-t  border-fg/20"></div>
+                </div>
+                <div className="relative flex justify-center text-sm">
+                  <span className="border-t-2 border-b-2 border-dashed border-fg/20 px-4 bg-white text-fg/100 tracking-wider font-bold">
+                    OR SEND A MESSAGE
+                  </span>
+                </div>
+              </div>
 
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
