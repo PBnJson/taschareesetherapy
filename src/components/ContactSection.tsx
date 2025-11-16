@@ -34,47 +34,15 @@ export default function ContactSection() {
     setIsSubmitting(true);
     setSubmitStatus("idle");
 
-    // Debug: Log environment variable status
-    console.log("🔍 EmailJS Configuration Check:");
-    console.log(
-      "Service ID:",
-      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID
-        ? "✅ Configured"
-        : "❌ Missing"
-    );
-    console.log(
-      "Template ID (Contact):",
-      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_CONTACT
-        ? "✅ Configured"
-        : "❌ Missing"
-    );
-    console.log(
-      "Public Key:",
-      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
-        ? "✅ Configured"
-        : "❌ Missing"
-    );
-
-    // Check if environment variables are configured
     if (
       !process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ||
       !process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_CONTACT ||
       !process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
     ) {
-      console.error(
-        "❌ EmailJS Error: Missing environment variables in .env.local"
-      );
-      console.error(
-        "📝 Please add NEXT_PUBLIC_EMAILJS_TEMPLATE_CONTACT to your .env.local file"
-      );
       setSubmitStatus("error");
       setIsSubmitting(false);
       return;
     }
-
-    console.log(
-      "✅ All EmailJS variables configured. Attempting to send email..."
-    );
 
     try {
       const templateParams = {
@@ -86,12 +54,6 @@ export default function ContactSection() {
           (e.target as HTMLFormElement).referralSource.value || "Not provided",
         message: formData.message || "No message provided",
       };
-
-      console.log("📧 Sending email with params:", templateParams);
-      console.log(
-        "📋 Using Contact Template ID:",
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_CONTACT
-      );
 
       const response = await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
@@ -106,14 +68,12 @@ export default function ContactSection() {
       // Reset the form
       (e.target as HTMLFormElement).reset();
     } catch (error) {
-      console.error("❌ Email sending failed:", error);
       if (error instanceof Error) {
         console.error("Error message:", error.message);
       }
       setSubmitStatus("error");
     } finally {
       setIsSubmitting(false);
-      console.log("🏁 Form submission complete");
     }
   };
 
