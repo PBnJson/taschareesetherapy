@@ -11,7 +11,7 @@ export default function JsonLd() {
     logo: "https://taschareesetherapy.com/images/tascha_credentials.jpeg",
     image: "https://taschareesetherapy.com/images/tascha_credentials.jpeg",
     telephone: "+19033726883",
-    email: "treese@therapysecure.com",
+    email: "taschareese@taschareesetherapy.com",
     priceRange: "$$",
     address: {
       "@type": "PostalAddress",

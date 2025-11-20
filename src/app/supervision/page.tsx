@@ -67,6 +67,13 @@ export default function SupervisionPage() {
         message: formData.message,
       };
 
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_SUPERVISION,
+        templateParams,
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
+      );
+
       setSubmitStatus("success");
       setFormData({
         name: "",
@@ -420,7 +427,7 @@ export default function SupervisionPage() {
                 {submitStatus === "error" && (
                   <p className="text-red-600 text-center">
                     There was an error sending your inquiry. Please try again or
-                    contact me directly at treese@therapysecure.com
+                    contact me directly at taschareese@taschareesetherapy.com
                   </p>
                 )}
               </form>

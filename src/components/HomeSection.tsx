@@ -101,9 +101,9 @@ export default function HomeSection() {
                 I believe we all deserve unbiased support, honest feedback, and
                 a fresh start. As a licensed clinical social worker with over 30
                 years of experience in providing trauma informed care to
-                individuals struggling with a wide range of issues. I'm here to
-                provide judgment-free mental health treatment to support your
-                journey to change.
+                individuals struggling with a wide range of issues. I&apos;m
+                here to provide judgment-free mental health treatment to support
+                your journey to change.
               </motion.p>
 
               <motion.p

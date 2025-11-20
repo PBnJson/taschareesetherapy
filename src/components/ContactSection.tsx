@@ -55,14 +55,14 @@ export default function ContactSection() {
         message: formData.message || "No message provided",
       };
 
-      const response = await emailjs.send(
+      await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_CONTACT,
         templateParams,
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
       );
 
-      console.log("✅ Email sent successfully!", response);
+      console.log("✅ Email sent successfully!");
       setSubmitStatus("success");
       setFormData({ name: "", email: "", phone: "", message: "" });
       // Reset the form
@@ -291,7 +291,7 @@ export default function ContactSection() {
                     <div>
                       <p className="font-medium text-navy">Email</p>
                       <a
-                        href="mailto:treese@therapysecure.com"
+                        href="mailto:taschareese@taschareesetherapy.com"
                         className="text-gray-600 hover:text-navy transition-colors"
                       >
                         taschareese@taschareesetherapy.com
