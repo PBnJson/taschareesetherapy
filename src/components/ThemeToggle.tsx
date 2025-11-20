@@ -25,7 +25,7 @@ export function ThemeToggle() {
     return () => {
       window.removeEventListener("resize", checkScreenSize);
     };
-  }, []);
+  });
 
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", theme);

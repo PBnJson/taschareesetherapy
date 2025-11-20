@@ -3,52 +3,99 @@ import Image from "next/image";
 
 export function Footer() {
   return (
-    <footer className="border-t border-gray-200 mt-auto">
-      <div className="container place-items-center py-5 grid gap-4 md:grid-cols-3">
-        <div className="place-items-center">
-          <Image
-            src="/images/tascha_logo.png"
-            alt="Tascha Reese Therapy Logo"
-            width={180}
-            height={160}
-          />
-        </div>
-        <div>
-          <h4 className="font-medium mb-2">Quick Links</h4>
-          <ul className="space-y-2 text-sm">
-            <li>
-              <Link href="/services" className="hover:text-brand-700">
-                Services
-              </Link>
-            </li>
-            <li>
-              <Link href="/about" className="hover:text-brand-700">
-                About
-              </Link>
-            </li>
-            <li>
-              <Link href="/contact" className="hover:text-brand-700">
-                Contact
-              </Link>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h4 className="font-medium mb-2">Contact</h4>
-          <p className="text-sm text-gray-600">
-            Dallas–Fort Worth, TX
-            <br />
-            <a href="mailto:hello@example.com" className="hover:text-brand-700">
-              hello@example.com
-            </a>
-            <br />
-            (555) 123-4567
-          </p>
+    <footer className="border-t border-gray-200 mt-auto bg-white">
+      <div className="container mx-auto px-4 py-8 md:py-12">
+        <div className="grid gap-8 md:grid-cols-3 items-start text-center md:text-left">
+          {/* Column 1: Logo */}
+          <div className="flex flex-col items-center md:items-start">
+            <Image
+              src="/images/tascha_logo.png"
+              alt="Tascha Reese Therapy Logo"
+              width={180}
+              height={160}
+              className="object-contain"
+            />
+          </div>
+
+          {/* Column 2: Quick Links */}
+          <div>
+            <h4 className="font-semibold text-gray-900 mb-4">Quick Links</h4>
+            <ul className="space-y-3 text-sm text-gray-600">
+              <li>
+                <Link
+                  href="/services"
+                  className="hover:text-brand-700 transition-colors"
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/about"
+                  className="hover:text-brand-700 transition-colors"
+                >
+                  About
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="hover:text-brand-700 transition-colors"
+                >
+                  Contact
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Contact & Address (CRITICAL FOR GOOGLE) */}
+          <div>
+            <h4 className="font-semibold text-gray-900 mb-4">
+              Contact & Location
+            </h4>
+            <address className="text-sm text-gray-600 not-italic space-y-3">
+              <p>
+                <strong className="block text-gray-900">
+                  Tascha Reese, LCSW
+                </strong>
+                <span className="text-xs text-gray-500">
+                  (Inside Onward Therapy & Wellness)
+                </span>
+              </p>
+
+              <p>
+                11910 Greenville Ave, Suite 511
+                <br />
+                Dallas, TX 75243
+              </p>
+
+              <p className="text-xs text-gray-500 pt-1">
+                * In-person appointments available by request
+              </p>
+
+              <div className="pt-2 space-y-1">
+                <a
+                  href="mailto:taschareese@taschareesetherapy.com"
+                  className="block hover:text-brand-700 transition-colors"
+                >
+                  taschareese@taschareesetherapy.com
+                </a>
+                <a
+                  href="tel:9033726883"
+                  className="block hover:text-brand-700 transition-colors"
+                >
+                  (903) 372-6883
+                </a>
+              </div>
+            </address>
+          </div>
         </div>
       </div>
-      <div className="border-t border-gray-200">
-        <div className="container py-2 text-xs text-gray-500">
-          © {new Date().getFullYear()} Tascha Reese. All rights reserved.
+
+      {/* Bottom Bar */}
+      <div className="border-t border-gray-200 bg-gray-50">
+        <div className="container mx-auto px-4 py-4 text-center md:text-left text-xs text-gray-500">
+          © {new Date().getFullYear()} Tascha Reese, LLC. All rights reserved.
         </div>
       </div>
     </footer>

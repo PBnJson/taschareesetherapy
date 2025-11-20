@@ -100,8 +100,10 @@ export default function HomeSection() {
               >
                 I believe we all deserve unbiased support, honest feedback, and
                 a fresh start. As a licensed clinical social worker with over 30
-                years of experience in trauma therapy and PTSD treatment,
-                I&apos;m here to provide judgment-free mental health counseling.
+                years of experience in providing trauma informed care to
+                individuals struggling with a wide range of issues. I'm here to
+                provide judgment-free mental health treatment to support your
+                journey to change.
               </motion.p>
 
               <motion.p
@@ -361,7 +363,7 @@ export default function HomeSection() {
                   up. I&apos;m sleeping better and my family says I&apos;m more
                   present.&quot;
                 </p>
-                <p className="font-semibold text-fg">-Veteran</p>
+                <p className="font-semibold text-fg">-DM</p>
               </div>
 
               <div className="rounded-2xl border-l-4 border-muted bg-surface/50 p-8 shadow-lg">
@@ -371,7 +373,7 @@ export default function HomeSection() {
                   through my PTSD triggers and gave me tools I use every
                   day.&quot;
                 </p>
-                <p className="font-semibold text-fg">-Anonymous</p>
+                <p className="font-semibold text-fg">-MP</p>
               </div>
             </div>
           </div>

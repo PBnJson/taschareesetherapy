@@ -116,6 +116,9 @@ export default function ServicesSection() {
                   you to receive care from the comfort and privacy of your own
                   space.
                 </p>
+                <p className="text-sm text-fg/50 pt-1 italic">
+                  In-Person Therapy (Dallas Office).
+                </p>
               </div>
 
               <div className="flex justify-center md:justify-end">

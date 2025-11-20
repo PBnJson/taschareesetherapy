@@ -294,7 +294,7 @@ export default function ContactSection() {
                         href="mailto:treese@therapysecure.com"
                         className="text-gray-600 hover:text-navy transition-colors"
                       >
-                        treese@therapysecure.com
+                        taschareese@taschareesetherapy.com
                       </a>
                     </div>
                   </div>
@@ -318,7 +318,7 @@ export default function ContactSection() {
                     <div>
                       <p className="font-medium text-navy">Phone</p>
                       <a
-                        href="tel:+15551234567"
+                        href="tel:+19033726883"
                         className="text-gray-600 hover:text-navy transition-colors"
                       >
                         (903) 372-6883
@@ -349,6 +349,46 @@ export default function ContactSection() {
                       </p>
                       <p className="text-gray-600">Weekends: by appointment</p>
                     </div>
+                  </div>
+                </div>
+              </Card>
+
+              <Card className="overflow-hidden">
+                <div className="p-6">
+                  <h2 className="text-2xl font-semibold text-fg mb-4">
+                    In-Person Sessions
+                  </h2>
+
+                  {/* "By Appointment" is crucial for avoiding "Storefront" suspension if the door is locked */}
+                  <div className="mb-4 inline-block rounded-md bg-blue-50 px-3 py-1 text-sm font-medium text-blue-700">
+                    * By appointment only
+                  </div>
+
+                  <div className="space-y-3 text-sm text-fg/80">
+                    <p className="font-medium text-fg">Office Location:</p>
+
+                    {/* Semantic Address Tag for SEO */}
+                    <address className="not-italic leading-relaxed text-fg/60">
+                      <span className="block font-medium text-fg">
+                        Tascha Reese, LCSW
+                      </span>
+                      <span className="block text-xs uppercase tracking-wide text-fg/50 mb-1">
+                        (Inside Onward Therapy & Wellness)
+                      </span>
+                      11910 Greenville Ave, Suite 511
+                      <br />
+                      Dallas, TX 75243
+                    </address>
+
+                    {/* Trust Signal: External Link to Google Maps */}
+                    <a
+                      href="https://www.google.com/maps/search/?api=1&query=11910+Greenville+Ave+Suite+511+Dallas+TX+75243"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-brand-700 hover:text-brand-800 font-medium hover:underline mt-2"
+                    >
+                      Get Directions &rarr;
+                    </a>
                   </div>
                 </div>
               </Card>
