@@ -112,10 +112,11 @@ export default function HomeSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               >
-                Secure virtual therapy sessions offer specialized support for
-                anxiety, depression, PTSD, and life transitions, all from the
-                comfort of your own space. Why not start your journey today?
-                Simply reach out and I&apos;ll be there, every step of the way.
+                Whether you prefer meeting in-person at my Dallas office or from
+                the comfort of your own space via secure telehealth, I offer
+                specialized support for anxiety, depression, PTSD, and life
+                transitions. Why not start your journey today? Simply reach out
+                and I&apos;ll be there, every step of the way.
               </motion.p>
 
               <motion.div
@@ -257,15 +258,15 @@ export default function HomeSection() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     strokeWidth={2}
-                    d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"
+                    d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
                   />
                 </svg>
               </div>
               <h3 className="mb-2 text-xl font-semibold text-fg">
-                100% Virtual
+                Flexible Sessions
               </h3>
               <p className="text-muted">
-                Connect from the comfort and privacy of your own space
+                In-person in Dallas or secure telehealth from anywhere in Texas
               </p>
             </motion.div>
             {/* Trust Item 3 */}

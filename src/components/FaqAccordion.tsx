@@ -61,14 +61,14 @@ export default function FaqAccordion({ items }: FaqAccordionProps) {
 // Pre-built FAQ items for Canton page
 export const cantonFaqItems: FaqItem[] = [
   {
-    question: "Do you see clients in person?",
+    question: "Do you see Canton clients in person?",
     answer:
-      "Yes. Virtual therapy is available for Canton residents, and in-person sessions are offered at my Dallas office by appointment.",
+      "Absolutely, Yes. Canton residents can schedule in-person sessions at my Dallas office (about 60 minutes away) or choose telehealth sessions from home, whichever works best for you.",
   },
   {
-    question: "Is virtual therapy effective for trauma or anxiety?",
+    question: "Is telehealth as effective as in-person therapy?",
     answer:
-      "Absolutely. I use evidence-based, trauma-informed approaches that work well over secure video.",
+      "Absolutely. I use evidence-based, trauma-informed approaches that work equally well via secure video. Many clients appreciate the flexibility to choose based on their schedule and comfort level.",
   },
   {
     question: "Do you accept insurance?",
@@ -81,13 +81,13 @@ export const cantonFaqItems: FaqItem[] = [
         >
           See accepted insurances
         </Link>{" "}
-        or contact me to verify.
+        or contact me to verify your benefits.
       </>
     ),
   },
   {
-    question: "I live rurally and feel isolated—can you help?",
+    question: "I live in a rural area and feel isolated. How can you help?",
     answer:
-      "Yes. Virtual sessions let you access care without travel. We can work on coping with isolation, building routines, and staying connected.",
+      "If driving to Dallas isn't practical, telehealth sessions let you access quality care from home. We can work on coping with isolation, building routines, and staying connected.",
   },
 ];
