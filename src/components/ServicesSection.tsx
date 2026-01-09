@@ -106,18 +106,17 @@ export default function ServicesSection() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div className="text-center md:text-left">
                 <h1 className="text-5xl font-bold text-navy mb-6">
-                  Virtual Therapy Services
+                  Therapy Services
                 </h1>
                 <p className="text-xl text-fg/80 leading-relaxed">
-                  Specialized mental health support designed specifically for
-                  individuals and their families who want or need the privacy of
-                  a home-based therapy setting. All sessions are conducted via
-                  secure video conferencing unless otherwise discussed, allowing
-                  you to receive care from the comfort and privacy of your own
-                  space.
+                  Specialized mental health support designed for individuals and
+                  their families. I offer both in-person sessions at my Dallas
+                  office and secure telehealth sessions for those who prefer the
+                  comfort and privacy of their own space—whichever works best
+                  for your situation.
                 </p>
                 <p className="text-sm text-fg/50 pt-1 italic">
-                  In-Person Therapy (Dallas Office).
+                  Dallas Office • Telehealth Available Statewide
                 </p>
               </div>
 
@@ -257,9 +256,7 @@ export default function ServicesSection() {
           <Card className="max-w-4xl mx-auto bg-surface/90-to-bg-surface/50 text-fg/90">
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-4">
-                  How Virtual Therapy Works
-                </h2>
+                <h2 className="text-3xl font-bold mb-4">How Sessions Work</h2>
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <span className="text-fg mr-3 mt-1 font-bold">1.</span>
@@ -271,20 +268,20 @@ export default function ServicesSection() {
                   <li className="flex items-start">
                     <span className="text-fg mr-3 mt-1 font-bold">2.</span>
                     <span>
-                      Receive a confidential video link before your appointment
+                      Choose in-person (Dallas) or telehealth based on your
+                      preference
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-fg mr-3 mt-1 font-bold">3.</span>
                     <span>
-                      Connect from any private location with internet access
+                      For telehealth: receive a confidential video link before
+                      your appointment
                     </span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-fg mr-3 mt-1 font-bold">4.</span>
-                    <span>
-                      Engage in therapy just like an in-person session
-                    </span>
+                    <span>Engage in professional, evidence-based therapy</span>
                   </li>
                 </ul>
               </div>
@@ -300,8 +297,8 @@ export default function ServicesSection() {
                     <strong>Frequency:</strong> Weekly or bi-weekly (flexible)
                   </p>
                   <p>
-                    <strong>Platform:</strong> HIPAA-compliant video
-                    conferencing
+                    <strong>Location:</strong> Dallas office or HIPAA-compliant
+                    telehealth
                   </p>
                   <p>
                     <strong>Insurance:</strong> Many plans are accepted

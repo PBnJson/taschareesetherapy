@@ -5,16 +5,17 @@ import Button from "../../../ui/Button";
 import FaqAccordion, { cantonFaqItems } from "../../../components/FaqAccordion";
 
 export const metadata: Metadata = {
-  title: "Therapist Serving Canton, TX | Virtual & In-Person | Tascha Reese",
+  title: "Therapist Serving Canton, TX | In-Person & Telehealth | Tascha Reese",
   description:
-    "Trauma-informed therapy for Canton, TX residents with flexible virtual sessions and in-person appointments in Dallas. PTSD, anxiety, depression, life transitions, veterans, and more.",
+    "Trauma-informed therapy for Canton, TX residents. In-person sessions at our Dallas office or convenient telehealth. PTSD, anxiety, depression, life transitions, veterans.",
   alternates: {
     canonical: "https://taschareesetherapy.com/service-areas/canton-tx",
   },
   openGraph: {
-    title: "Therapist Serving Canton, TX | Virtual & In-Person | Tascha Reese",
+    title:
+      "Therapist Serving Canton, TX | In-Person & Telehealth | Tascha Reese",
     description:
-      "PTSD, anxiety, depression, and trauma therapy for Canton residents. Virtual care across East Texas plus in-person sessions in Dallas.",
+      "PTSD, anxiety, depression, and trauma therapy for Canton residents. In-person in Dallas or telehealth from home.",
     url: "https://taschareesetherapy.com/service-areas/canton-tx",
     siteName: "Tascha Reese Therapy",
     locale: "en_US",
@@ -35,58 +36,105 @@ export default function CantonTXPage() {
               </span>
             </div>
             <h1 className="tracking-wider text-5xl font-bold text-fg mb-6 font-serif">
-              Virtual Therapy for Canton, TX
+              Therapy for Canton, TX Residents
             </h1>
             <p className="text-xl text-fg/80 leading-relaxed">
               Compassionate, professional mental health support for residents of
-              Canton and the surrounding East Texas communities—all from the
-              comfort of your home.
+              Canton and the surrounding East Texas communities. Visit my Dallas
+              office or connect from home, whatever works best for you.
             </p>
           </div>
 
-          {/* Two Column: Virtual Benefits + Services */}
+          {/* Session Options - Lead with In-Person */}
           <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 mb-16">
-            <Card className="bg-white/60">
-              <h2 className="text-2xl font-semibold text-fg mb-4">
-                Why Choose Virtual Therapy?
-              </h2>
-              <ul className="space-y-3 text-fg/80">
-                <li className="flex items-start gap-3">
-                  <span className="text-accent mt-1">✓</span>
-                  <span>No commute—save time and gas</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-accent mt-1">✓</span>
-                  <span>Sessions from home, office, or any private space</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-accent mt-1">✓</span>
-                  <span>Same evidence-based treatment as in-person</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-accent mt-1">✓</span>
-                  <span>HIPAA-compliant video platform</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="text-accent mt-1">✓</span>
-                  <span>Flexible evenings & weekend scheduling</span>
-                </li>
-              </ul>
+            <Card className="bg-white/60 border-2 border-accent/30">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-accent/20 rounded-full flex items-center justify-center">
+                  <svg
+                    className="w-5 h-5 text-fg"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+                    />
+                  </svg>
+                </div>
+                <h2 className="text-2xl font-semibold text-fg">
+                  In-Person Sessions
+                </h2>
+              </div>
+              <p className="text-fg/80 mb-4">
+                Meet face-to-face at my Dallas office—about 60 minutes from
+                Canton. Many clients find the dedicated space helpful for deeper
+                work.
+              </p>
+              <address className="not-italic text-fg/70 text-sm border-t border-muted/20 pt-3 mt-3">
+                <strong>Office Location:</strong>
+                <br />
+                11910 Greenville Ave, Suite 511
+                <br />
+                Dallas, TX 75243
+              </address>
             </Card>
 
             <Card className="bg-white/60">
-              <h2 className="text-2xl font-semibold text-fg mb-4">
-                Services Available
-              </h2>
-              <ul className="space-y-2 text-fg/80">
-                <li>• PTSD & Trauma Treatment</li>
-                <li>• Anxiety & Depression</li>
-                <li>• Life Transitions & Adjustment</li>
-                <li>• Relationship Counseling</li>
-                <li>• Anger Management</li>
-                <li>• Veteran & Military Support</li>
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 bg-surface/50 rounded-full flex items-center justify-center">
+                  <svg
+                    className="w-5 h-5 text-fg"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                </div>
+                <h2 className="text-2xl font-semibold text-fg">
+                  Telehealth Option
+                </h2>
+              </div>
+              <p className="text-fg/80 mb-4">
+                Can&apos;t make the drive? No problem. Secure video sessions
+                offer the same quality care from home, work, or anywhere in
+                Texas.
+              </p>
+              <ul className="text-fg/70 text-sm space-y-1">
+                <li>✓ HIPAA-compliant platform</li>
+                <li>✓ Same evidence-based treatment</li>
+                <li>✓ Flexible scheduling</li>
               </ul>
-              <p className="text-sm text-fg/60 mt-4">
+            </Card>
+          </div>
+
+          {/* Services Available */}
+          <div className="max-w-4xl mx-auto mb-16">
+            <Card className="bg-white/50">
+              <h2 className="text-2xl font-semibold text-fg mb-4 text-center">
+                Services Available to Canton Residents
+              </h2>
+              <div className="grid sm:grid-cols-2 gap-4 text-fg/80">
+                <ul className="space-y-2">
+                  <li>• PTSD & Trauma Treatment</li>
+                  <li>• Anxiety & Depression</li>
+                  <li>• Life Transitions & Adjustment</li>
+                </ul>
+                <ul className="space-y-2">
+                  <li>• Relationship Counseling</li>
+                  <li>• Anger Management</li>
+                  <li>• Veteran & Military Support</li>
+                </ul>
+              </div>
+              <p className="text-sm text-fg/60 mt-4 text-center">
                 Adults, veterans, and families welcome.
               </p>
             </Card>
@@ -108,56 +156,16 @@ export default function CantonTXPage() {
                 <p>
                   Whether you&apos;re dealing with daily stress, processing past
                   trauma, or seeking support during a difficult transition,
-                  I&apos;m here to help—without requiring a long drive.
+                  I&apos;m here to help. Drive to Dallas for in-person sessions
+                  or connect from home—your choice.
                 </p>
                 <p className="text-fg/60 text-base">
-                  Also serving{" "}
+                  Also serving residents of{" "}
                   <strong>
                     Tyler, Athens, Terrell, Kaufman, Wills Point, Van, Ben
                     Wheeler, and Edgewood
-                  </strong>{" "}
-                  via secure virtual sessions.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          {/* In-Person Option - Compact callout */}
-          <div className="max-w-3xl mx-auto mb-16">
-            <div className="flex items-start gap-4 p-6 rounded-xl bg-white/50 border border-accent/30">
-              <div className="flex-shrink-0 w-10 h-10 bg-accent/20 rounded-full flex items-center justify-center">
-                <svg
-                  className="w-5 h-5 text-fg"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
-              </div>
-              <div>
-                <h3 className="text-lg font-semibold text-fg mb-1">
-                  Prefer In-Person?
-                </h3>
-                <p className="text-fg/80 text-sm">
-                  In-person sessions available at my Dallas office.{" "}
-                  <Link
-                    href="/service-areas/dallas-tx"
-                    className="text-accent hover:text-accent/80 underline"
-                  >
-                    Learn more →
-                  </Link>
+                  </strong>
+                  .
                 </p>
               </div>
             </div>
@@ -166,7 +174,7 @@ export default function CantonTXPage() {
           {/* FAQ - Accordion */}
           <div className="max-w-3xl mx-auto mb-16">
             <h2 className="text-2xl font-semibold text-fg mb-6 text-center">
-              Questions About Therapy in Canton
+              Questions About Therapy for Canton Residents
             </h2>
             <FaqAccordion items={cantonFaqItems} />
           </div>
@@ -222,18 +230,18 @@ export default function CantonTXPage() {
             mainEntity: [
               {
                 "@type": "Question",
-                name: "Do you see clients in person?",
+                name: "Do you see Canton clients in person?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Yes. Virtual therapy is available for Canton residents, and in-person sessions are offered at my Dallas office by appointment.",
+                  text: "Yes. Canton residents can schedule in-person sessions at my Dallas office (about 60 minutes away) or choose telehealth sessions from home.",
                 },
               },
               {
                 "@type": "Question",
-                name: "Is virtual therapy effective for trauma, anxiety, or depression?",
+                name: "Is telehealth as effective as in-person therapy?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Absolutely. I use evidence-based approaches (including trauma-informed care) that translate well to secure video sessions.",
+                  text: "Absolutely. I use evidence-based approaches (including trauma-informed care) that work equally well via secure video sessions.",
                 },
               },
               {
@@ -246,10 +254,10 @@ export default function CantonTXPage() {
               },
               {
                 "@type": "Question",
-                name: "I live in a rural area and feel isolated—can virtual therapy help?",
+                name: "I live in a rural area and feel isolated.Can you help?",
                 acceptedAnswer: {
                   "@type": "Answer",
-                  text: "Yes. Virtual sessions let you access care without travel, even if you're far from town or prefer to stay home. We can work on coping with isolation, building routines, and staying connected safely.",
+                  text: "Yes. Telehealth sessions are available or meeting in Dallas might be better. We can work on coping with isolation, building routines, and staying connected.",
                 },
               },
             ],
