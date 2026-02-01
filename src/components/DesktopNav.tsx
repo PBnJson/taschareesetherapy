@@ -11,6 +11,12 @@ const links = [
   { href: "#services", label: "Services", type: "scroll" },
   { href: "/insurances", label: "Insurances", type: "link" },
   { href: "#contact", label: "Contact", type: "scroll" },
+  {
+    href: "/legal",
+    label: "Professional Accountability and Client Rights",
+    type: "link",
+    sizeClass: "text-xs",
+  },
 ];
 
 const serviceAreas = [
@@ -65,7 +71,7 @@ export function DesktopNav() {
             key={link.href}
             href={pathname === "/" ? link.href : `/${link.href}`}
             onClick={(e) => handleScrollLink(e, link.href)}
-            className="text-sm transition text-muted hover:text-fg cursor-pointer font-medium"
+            className={`${link.sizeClass ?? "text-sm"} transition text-muted hover:text-fg cursor-pointer font-medium`}
           >
             {link.label}
           </a>
@@ -73,7 +79,7 @@ export function DesktopNav() {
           <Link
             key={link.href}
             href={link.href}
-            className="text-sm transition text-muted hover:text-fg cursor-pointer font-medium"
+            className={`${link.sizeClass ?? "text-sm"} transition text-muted hover:text-fg cursor-pointer font-medium`}
           >
             {link.label}
           </Link>

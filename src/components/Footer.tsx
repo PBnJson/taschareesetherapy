@@ -45,6 +45,14 @@ export function Footer() {
                   Contact
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/legal"
+                  className="text-xs hover:text-brand-700 transition-colors"
+                >
+                  Professional Accountability and Client Rights
+                </Link>
+              </li>
             </ul>
           </div>
 

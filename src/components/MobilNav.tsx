@@ -10,6 +10,12 @@ const links = [
   { href: "#services", label: "Services", type: "scroll" },
   { href: "/insurances", label: "Insurances", type: "link" },
   { href: "#contact", label: "Contact", type: "scroll" },
+  {
+    href: "/legal",
+    label: "Professional Accountability and Client Rights",
+    type: "link",
+    sizeClass: "text-xs",
+  },
 ];
 
 const serviceAreas = [
@@ -62,7 +68,7 @@ export function MobilNav() {
                   key={link.href}
                   href={pathname === "/" ? link.href : `/${link.href}`}
                   onClick={(e) => handleScrollLink(e, link.href)}
-                  className="text-sm text-gray-700 hover:text-brand-700 cursor-pointer"
+                  className={`${link.sizeClass ?? "text-sm"} text-gray-700 hover:text-brand-700 cursor-pointer`}
                 >
                   {link.label}
                 </a>
@@ -70,7 +76,7 @@ export function MobilNav() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm text-gray-700 hover:text-brand-700 cursor-pointer"
+                  className={`${link.sizeClass ?? "text-sm"} text-gray-700 hover:text-brand-700 cursor-pointer`}
                   onClick={() => setOpen(false)}
                 >
                   {link.label}

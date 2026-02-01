@@ -18,6 +18,7 @@ Tascha Reese Therapy provides professional therapy services. This website includ
 - [Home](${baseUrl}) - Main landing page with overview of services and about section.
 - [Insurances](${baseUrl}/insurances) - Information about accepted insurance plans.
 - [Supervision](${baseUrl}/supervision) - Details on supervision services for other therapists.
+- [Professional Accountability and Client Rights](${baseUrl}/legal) - Legal rights and regulatory contact information.
 
 ### Service Areas
 - [Canton, TX](${baseUrl}/service-areas/canton-tx) - Therapy services available in Canton.
